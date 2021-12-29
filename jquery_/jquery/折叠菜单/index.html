@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            /*display: inline-block;*/
+            display: block;
+            height: 100px;
+            width: 100px;
+            background-color: yellow;
+            margin: 20px;
+        }
+    </style>
+    <script src="../../jquery_scr/jquery-1.12.4.js"></script>
+    <script>
+        // 如果监听一个元素获取他的index就是其在上一层父级元素中索引
+        $(function () {
+            $("div").click(function () {
+                //这样返回的还是所有的div
+                // console.log($("span>div"));
+                var index = $(this).index();
+                console.log(index);
+            })
+        });
+    </script>
+</head>
+<body>
+<span>
+    <div>1</div>
+    <div>1(2)</div>
+    </span><span>
+    <div>2</div>
+    </span><span>
+    <div>3</div>
+    </span><span>
+    <div>4</div>
+    </span>
+</body>
+</html>

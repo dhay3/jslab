@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    div{
+        float: left;
+    }
+</style>
+<script>
+    //时钟
+    window.onload = days;
+
+    function days() {
+        var date = new Date();
+        var fullYear = date.getFullYear();
+        console.log(fullYear);
+        //0代表一月
+        var month = date.getMonth() + 1;
+        console.log(month);
+        //获取日用getDate(),获取星期用getDay()
+        var day = date.getDate();
+        day = checkTime(day);
+        console.log(day);
+        var hours = date.getHours();
+        hours = checkTime(hours);
+        console.log(hours);
+        var minutes = date.getMinutes();
+        minutes = checkTime(minutes);
+        console.log(minutes);
+        var seconds = date.getSeconds();
+        seconds = checkTime(seconds);
+        console.log(seconds);
+        document.getElementById("d1").innerHTML = fullYear + "-" + month + "-" + day + " " + hours + ":" + minutes + ":" + seconds;
+        //设置每隔多长时间调用一次函数
+        setTimeout(days, 1000);
+    }
+
+    function checkTime(i) {
+        if (i < 10) {
+            i = "0" + i;
+        }
+        return i;
+    }
+    function forward() {
+        window.history.forward();
+    }
+    function back() {
+        window.history.back();
+    }
+    function go() {
+        //+表示向前,-表示向后
+        window.history.go(+1);
+    }
+</script>
+<body>
+<div id="d1"><br></div>
+<div style="height: 50px"><button onclick="forward()">向前</button></div>
+<div style="height: 50px"><button onclick="back()">向后</button></div>
+<div style="height: 50px"><button onclick="go()">go</button></div>
+</body>
+</html>

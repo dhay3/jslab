@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+<!--    在遍历过程没有使用下标值-->
+    <p v-for="item in ele">{{item}}</p>
+<!--    在遍历的过程中获取下标值-->
+    <ul>
+        顺序不能换，和jquery一样
+        <li v-for="(item,index) in ele">{{index}},{{item}}</li>
+    </ul>
+</div>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+          ele: ['a','b','c']
+        }
+    });
+</script>
+</html>

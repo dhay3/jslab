@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<!--创建的对象有prototype属性,new出来的没有prototype属性-->
+<script>
+    // 方法一
+    people1 = new Object();
+    people1.name = "丁一";
+    people1.age = 21;
+    // 方法二(给属性赋值不是 = 而是 : )
+    people2 = {
+        name: "孙二",
+        age: 22
+    };
+    // 方法三,推荐采用(构造函数形式)
+    function people3(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    people2.tt=2;
+    // console.log(people2.tt);
+    let son2 = new people2;
+    console.log(son2.career);
+    son3 = new people3("张三", 23);
+
+
+    // people3.prototype.career = "teacher";
+    people3.career = "teacher";
+    console.log(people3.career);
+    //不是prototype的子类没有career属性
+    console.log(son3.career);
+    document.write(people1.name + people1.age + '<br>');
+    document.write(people2.name + people2.age + '<br>');
+    document.write(son3.name + son3.age + son3.career + '<br>');
+
+    //数组
+    var a = ["a", "f", "e", "z", "c"];
+    var b = ["b", "d", "q", "i"];
+    var c = a.concat(b);
+    document.write(c + '<br>');
+    document.write(c.sort() + '<br>');
+    document.write(c.sort(sortReverse) + '<br>');
+
+    //逆序
+    function sortReverse(a, b) {
+        return b - a;
+    }
+
+    a.push("cc");
+    // a.pop("z");
+    document.write(a + '<br>');
+    // a.push("aaa");
+    // document.write(a+'<br>');
+    //数组反转
+    document.write(a.reverse());
+
+</script>
+<body>
+
+</body>
+</html>

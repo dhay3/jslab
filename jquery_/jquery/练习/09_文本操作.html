@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../jquery_scr/jquery-1.12.4.js"></script>
+    <script>
+        $(function () {
+            //与原生的.innerText一样
+            document.getElementsByTagName("button")[0].onclick = function(){
+                $("div").text("<font color='red'>添加文本</font>");
+            };
+
+            document.getElementsByTagName("button")[1].onclick = function(){
+                //与原生的.innerHTMl一样
+                $("div").html("<font color='red'>添加html</font>");
+            };
+            //与原生的.value一样
+            document.getElementsByTagName("button")[2].onclick = function(){
+                var val = $("div").val("this is a value");
+                console.log(val);
+            };
+
+
+        })
+    </script>
+</head>
+<body>
+<div style="width: 100px;height: 100px; border: 1px red solid"></div>
+<button>添加文本</button>
+<button>添加html</button>
+<button>添加值</button>
+<font></font>
+</body>
+</html>

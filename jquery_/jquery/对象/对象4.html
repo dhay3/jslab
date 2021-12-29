@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    function f() {
+
+    }
+    f.prototype={//
+        a:"aaa",
+        b:function () {
+            console.log("bbb")
+        }
+    };
+    f.c=10;
+    // console.log(new f().a);
+    console.log(new f()["a"]);//所有的js对象都可以通过键值对获得
+    console.log(f["c"]);
+    // console.log(new f().b());//会打印undefined是因为f函数没有返回值
+    // console.log(new f.b());//
+
+</script>
+<body>
+
+</body>
+</html>

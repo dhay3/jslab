@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .active {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <!--        将参数中的index参数传给函数-->
+        <li v-for="(item,index) in movies" @click="linkIndex(index)"
+            :class="{active:currentIndex===index}">{{item}}
+        </li>
+    </ul>
+</div>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      movies: ['a', 'b', 'c', 'd'],
+      currentIndex: 0
+    },
+    methods: {
+      linkIndex(index) {
+        //让传过来的函数的index赋值给currentIndex
+        this.currentIndex = index;
+      }
+    }
+  });
+</script>
+</html>

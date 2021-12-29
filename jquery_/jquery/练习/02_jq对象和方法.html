@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../jquery_scr/jquery-1.12.4.js"></script>
+    <script>
+        /*
+         jquery对象是一个伪数组
+         什么是伪数组:有0到length-1的索引,并且有length属性
+         所以不能通过$()[]形式获取元素
+         通过each方法获得
+         $.each(text,function (a,b) {
+                 console.log(a,b);
+             });
+
+         jquery支持链式设置
+        */
+        $(function () {
+            //返回了一个封装了所有div标签的jquery对象
+            var $div = $("div");
+            console.log($div);
+        });
+
+
+    </script>
+</head>
+<body>
+<div>div1</div>
+<div>div2</div>
+<div>div3</div>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #d1 {
+            width: 600px;
+            height: 160px;
+            /*border不算在width和height中*/
+            border: 10px solid black;
+            margin: 100px auto;
+            overflow: hidden;
+        }
+
+        img {
+            width: 300px;
+            height: 160px;
+        }
+
+        ul {
+            height: 160px;
+            width: 1800px;
+            background-color: rgba(0, 0, 0,1);
+        }
+
+        li {
+            list-style: none;
+            float: left;
+        }
+    </style>
+    <script src="../../jquery_scr/jquery-1.12.4.js"></script>
+    <script>
+        $(function () {
+            // console.log($("#d1").height());
+            // console.log($("#d1").width());
+            //实现图片轮播
+            marginLeft = 0;
+            function roll() {
+                //jq没有marginLeft方法
+                // var marginLeft = $("ul").marginLeft();
+                marginLeft -= 3;
+                //过了四张图片后把marginLeft设为0实现跳转
+                if (marginLeft <= -1200) {
+                    marginLeft = 0;
+                }
+                $("ul").css("margin-Left", marginLeft);
+            }
+
+            //页面载入滚动
+            rollAgain();
+
+            $("ul>li").hover(
+                //鼠标进入停止滚动,图片效果改变
+                function () {
+                    //clearInterval传进去的参数setInterval的返回值
+                    clearInterval(interval);
+                    console.log($(this).siblings().children("span"));
+                    // $(this).siblings().children("span").css("background", "black");
+                    //设置其他li的透明,显示ul的颜色
+                    $(this).siblings().fadeTo(400,0.5);
+                    //设置自己的li的透明回到原来状态
+                    $(this).fadeTo(400,1);
+                },
+                //鼠标移出继续滚动
+                function () {
+                    rollAgain();
+                });
+
+            function rollAgain() {
+                interval = setInterval(roll, 24);
+                $("ul>li").fadeTo(400,1);
+                //去除所有的蒙版
+            }
+
+
+        });
+    </script>
+</head>
+<body>
+<div id="d1">
+    <ul>
+        <li>
+
+            <img src="../瀑布流/pic/5.jpg" alt=""></li>
+        <li>
+
+            <img src="../瀑布流/pic/6.jpg" alt=""></li>
+        <li>
+
+            <img src="../瀑布流/pic/7.jpg" alt=""></li>
+        <li>
+
+            <img src="../瀑布流/pic/4.jpg" alt=""></li>
+        <!--        无缝跳转-->
+        <li>
+
+            <img src="../瀑布流/pic/5.jpg" alt=""></li>
+        <li>
+
+            <img src="../瀑布流/pic/6.jpg" alt=""></li>
+    </ul>
+</div>
+</body>
+</html>

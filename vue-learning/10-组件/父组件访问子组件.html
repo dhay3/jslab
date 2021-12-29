@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <cpm ref="a"></cpm>
+    <cpm ref="b"></cpm>
+    <cpm ref="c"></cpm>
+    <button @click="btnClick">click</button>
+</div>
+</body>
+<template id="tem">
+    <div>
+        <h2>hello world</h2>
+    </div>
+</template>
+<script src="../js/vue.js"></script>
+<script>
+    const cpm = {
+      template:'#tem',
+      data(){
+        return {
+          name: '子组件'
+        }
+      }
+    }
+    new Vue({
+        el: '#app',
+        data: {
+
+        },
+      components:{
+          cpm
+      },
+      methods:{
+          btnClick(){
+            //父组件通过$refs获取所有ref属性所对应的对象
+            console.log(this.$refs.a.name)
+          }
+      }
+    });
+</script>
+</html>

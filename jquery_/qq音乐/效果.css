@@ -1,0 +1,695 @@
+* {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+
+/*设置全局属性*/
+html, body {
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+}
+
+#header {
+    width: 100%;
+    height: 50px;
+    /*background: deeppink;*/
+}
+
+#header > #logo > a {
+    display: inline-block;
+    height: 30px;
+    width: 80px;
+    margin-top: 10px;
+    background: url("source/pic/player_logo.png") 0 0 no-repeat;
+}
+
+#header > #logo {
+    float: left;
+    margin-left: 20px;
+    /*opacity是透明度*/
+    opacity: 0.5;
+}
+
+#header > #logo:hover {
+    opacity: 1;
+}
+
+#header #register {
+    float: right;
+    line-height: 50px;
+}
+
+#header #register li {
+    list-style: none;
+    float: left;
+    margin-right: 25px;
+    color: white;
+    opacity: 0.5;
+}
+
+#header #register li a {
+    text-decoration: none;
+    color: green;
+}
+
+#header #register li:hover {
+    opacity: 1;
+}
+
+#content {
+    /*margin-top: 45px;*/
+    /*width是剩下的宽度*/
+    width: 100%;
+    height: 460px;
+    /*background-color: deeppink;*/
+    /*自适应窗口大小*/
+    margin: 0 auto;
+}
+
+#content > #content_in {
+    width: 1200px;
+    height: 100%;
+    /*background-color: deeppink;*/
+    /*居中设置*/
+    margin: 0 auto;
+}
+
+#content_left {
+    width: 800px;
+    height: 100%;
+    /*background-color: deeppink;*/
+    float: left;
+}
+
+#content_right {
+    width: 400px;
+    height: 100%;
+    /*background-color: deeppink;*/
+    float: right;
+}
+
+#content_list {
+    width: 100%;
+    height: 420px;
+    /*background: white;*/
+    overflow: auto;
+}
+
+#content_toolbar {
+    width: 100%;
+    height: 40px;
+    /*background: blueviolet;*/
+    /*border-radius: 10px;*/
+}
+
+#content_toolbar span {
+    display: inline-block;
+    width: 122px;
+    height: 100%;
+    line-height: 40px;
+    text-align: center;
+    /*快捷键bd+*/
+    border: 1px solid #fff;
+    /*边框向内画*/
+    box-sizing: border-box;
+    border-radius: 10px;
+    color: white;
+    opacity: 0.5;
+    margin-right: 5px;
+}
+
+#content_toolbar span:hover {
+    opacity: 1;
+}
+
+#content_toolbar span i {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background: url("source/pic/player_icon.png") no-repeat 0 0;
+    margin-right: 5px;
+    /*border: 1px solid #FFF;*/
+    box-sizing: border-box;
+    margin-top: 5px;
+    /*padding-top: 10px;*/
+}
+
+/*:左右绝对不要加空格!important*/
+#content_toolbar span:nth-child(1) > i {
+    background-position: -60px -17px;
+}
+
+#content_toolbar span:nth-child(2) i {
+    background-position: -20px -20px;
+}
+
+#content_toolbar span:nth-child(3) i {
+    background-position: -40px -240px;
+}
+
+#content_toolbar span:nth-child(4) i {
+    background-position: -100px -20px;
+}
+
+#content_toolbar span:nth-child(5) i {
+    background-position: -40px -300px;
+}
+
+#content_list li {
+    list-style: none;
+    width: 100%;
+    height: 50px;
+    /*background: deeppink;*/
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    box-sizing: border-box;
+    /*设置文本不能选中*/
+    user-select: none;
+}
+
+#content_list li div {
+    float: left;
+    /*text-align: center;*/
+    line-height: 50px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/*复选框*/
+.all_check {
+    width: 50px;
+    height: 100%;
+    /*background: blueviolet;*/
+    text-align: center;
+    border-radius: 5px;
+}
+
+.all_check i {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border: 1px solid #fff;
+    opacity: 0.5;
+}
+.all_checked i {
+    background: url("source/pic/player_icon.png") no-repeat -60px -80px;
+    opacity: 1;
+}
+#content_list .list_check {
+    width: 50px;
+    height: 100%;
+    /*background: blueviolet;*/
+    text-align: center;
+    border-radius: 5px;
+}
+
+#content_list .list_check i {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border: 1px solid #fff;
+    opacity: 0.5;
+}
+
+#content_list .list_checked i {
+    background: url("source/pic/player_icon.png") no-repeat -60px -80px;
+    opacity: 1;
+}
+
+#content_list .list_number {
+    /*text-align: center;*/
+    width: 20px;
+    height: 100%;
+    /*background: deeppink;*/
+    /*opacity: 0.5;*/
+}
+
+/*音乐播放动图*/
+#content_list .list_number2 {
+    /*如果代码没问题一般都是优先级的问题*/
+    color: transparent !important;
+    /*text-align: center;*/
+    background: url("source/pic/player_number_wave.gif") no-repeat 0 center;
+}
+
+#content_list .list_name .list_menu {
+    float: right;
+    display: none;
+}
+
+/*类选择器会被id选择器覆盖
+.list_menu{
+    float: right;
+}*/
+/*歌曲菜单栏的图标*/
+.list_menu a {
+    display: inline-block;
+    height: 36px;
+    width: 36px;
+    margin-top: 5px;
+    margin-right: 5px;
+    /*float: right;*/
+    opacity: 0.5;
+    background: url("source/pic/player_menu_icon.png") no-repeat 0 0;
+}
+
+.list_menu a:hover {
+    opacity: 1;
+}
+
+/*播放*/
+.list_menu a:nth-child(1) {
+    background-position: -120px 0;
+}
+
+.list_menu a:nth-child(2) {
+    background-position: -120px -80px;
+}
+
+.list_menu a:nth-child(3) {
+    background-position: -120px -120px;
+}
+
+.list_menu a:nth-child(4) {
+    background-position: -120px -40px;
+}
+
+/*删除*/
+.list_time > a {
+    display: none;
+    width: 36px;
+    height: 36px;
+    background: url("source/pic/player_menu_icon.png") no-repeat -120px -160px;
+    opacity: 0.5;
+    margin-top: 5px;
+    float: left;
+}
+
+.list_time > a:hover {
+    opacity: 1;
+}
+
+/*暂停*/
+.list_menu_play2 {
+    /*注意important是在分号内的*/
+    background-position: -80px -200px !important;
+}
+
+/*#content_list > li :hover {*/
+/*    !*opacity: 1;*!*/
+/*    display: block;*/
+/*}*/
+
+
+.list_name {
+    width: 50%;
+    height: 100%;
+    /*background: deeppink;*/
+    /*opacity: 0.5;*/
+}
+
+.list_singer {
+    width: 20%;
+    height: 100%;
+    /*background: deeppink;*/
+    /*opacity: 0.5;*/
+}
+
+.list_time {
+    /*opacity: 0.5;*/
+}
+
+
+#content_right {
+    user-select: none;
+    text-align: center;
+}
+
+#content_right .song_info {
+    /*设置文字颜色*/
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 30px;
+}
+
+#content_right .song_info .song_info_pic {
+    display: inline-block;
+    background: url("source/pic/album_cover_back.png") no-repeat 0 0;
+    width: 201px;
+    height: 180px;
+    /*opacity: 1;*/
+}
+
+#content_right .song_info .song_info_pic img {
+    width: 180px;
+    height: 180px;
+    position: relative;
+    right: 10px;
+    /*opacity: 1;*/
+}
+
+/*表格的位置需要单独设置*/
+#content_right table {
+    text-align: center;
+    margin: 0 auto;
+}
+
+#content_right table tr {
+    text-align: left;
+}
+
+.song_info tr a {
+    text-decoration: none;
+    color: #fff;
+    opacity: 0.5;
+}
+
+.song_info tr a:hover {
+    opacity: 1;
+}
+
+#content_right .lyric_div {
+    width: 400px;
+    height: 165px;
+    margin-top: 20px;
+    overflow: auto;
+    /*overflow: hidden;*/
+}
+
+#content_right .song_lyric {
+    /*background-color: yellowgreen;*/
+    text-align: center;
+}
+
+#content_right .song_lyric li {
+    list-style: none;
+    line-height: 32px;
+    color: #fff;
+    opacity: 0.5;
+}
+
+/*设置歌词滚动换色*/
+#content_right .song_lyric .cur {
+    color: #31c27c;
+    /*font-weight: initial;*/
+    opacity: 1;
+}
+
+.footer {
+    width: 100%;
+    height: 60px;
+    /*background-color: green;*/
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.footer > .footer_in {
+    width: 1200px;
+    height: 100%;
+    /*background-color: darkmagenta;*/
+    margin: 0 auto;
+}
+
+.footer_in a {
+    display: inline-block;
+    text-decoration: none;
+    /*width: 24px;*/
+    /*height: 25px;*/
+    /*margin: 0 10px;*/
+    background: url("source/pic/player_footer_icon.png");
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.footer_in > div {
+    /*因为div是块级元素会自动换行要成inline-block才会显示一行中*/
+    display: inline-block;
+}
+
+.footer_in .music_pre {
+    width: 19px;
+    height: 20px;
+    background-position: 0 -30px;
+}
+
+
+.footer_in .music_play {
+    width: 21px;
+    height: 29px;
+    /*垂直移动当前位置*/
+    vertical-align: -5px;
+    background-position: 0 0;
+}
+
+.footer_in .music_pause {
+    /*width: 21px;*/
+    /*height: 29px;*/
+    background-position: -30px 0;
+    /*vertical-align: -5px;*/
+}
+
+.footer_in .music_next {
+    width: 19px;
+    height: 20px;
+    background-position: 0 -52px;
+}
+
+.footer_in .music_fav {
+    width: 24px;
+    height: 21px;
+    background-position: 0 -96px;
+}
+
+.footer_in .music_faved {
+    background-position: -30px -96px;
+}
+
+.footer_in .music_down {
+    width: 22px;
+    height: 21px;
+    background-position: 0 -120px;
+}
+
+.footer_in .music_comment {
+    width: 24px;
+    height: 24px;
+    background-position: 0 -400px;
+}
+
+.footer_in .music_mode1 {
+    margin-left: 10px;
+    width: 26px;
+    height: 25px;
+    background-position: 0 -205px;
+}
+
+.footer_in .music_mode2 {
+    width: 23px;
+    height: 20px;
+    background-position: 0 -260px;
+}
+
+.footer_in .music_mode3 {
+    width: 25px;
+    height: 20px;
+    background-position: 0 -74px;
+}
+
+.footer_in .music_mode4 {
+    width: 26px;
+    height: 25px;
+    background-position: 0 -232px;
+}
+
+.progress_info {
+    height: 40px;
+    width: 672px;
+    /*background: blue;*/
+}
+
+.progress_info .progress_top {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    /*background: red;*/
+    color: #fff
+}
+
+.progress_info .progress_top .progress_name {
+    float: left;
+    opacity: 0.5;
+}
+
+.progress_info .progress_top .progress_name:hover {
+    opacity: 1;
+}
+
+.progress_info .progress_top .progress_time {
+    float: right;
+    opacity: 0.5;
+}
+
+/*设置背景*/
+.progress_bar.progress_bar {
+    width: 100%;
+    height: 4px;
+    margin-top: 3px;
+    background: rgba(255, 255, 255, 0.5);
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px;
+    position: relative;
+}
+
+/*设置前景*/
+.progress_info .progress_bar .progress_line {
+    width: 0;
+    height: 4px;
+    background: #fff;
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px;
+    /*overflow: hidden;*/
+}
+
+/*设置进度点*/
+.progress_info .progress_bar .progress_line .progress_dot {
+    user-select: none;
+    width: 15px;
+    height: 15px;
+    /*50%就是一个半径为15px的圆*/
+    border-radius: 50%;
+    background: #fff;
+    position: absolute;
+    top: -5px;
+    left: 0;
+}
+
+.music_voice_info {
+    display: inline-block;
+    height: 40px;
+    width: 135px;
+    /*background: blue;*/
+    position: relative;
+}
+
+.footer_in .music_voice_info .music_voice_icon {
+    width: 26px;
+    height: 21px;
+    background-position: 0 -144px;
+}
+
+.footer_in .music_voice_info .music_voice_icon2 {
+    width: 26px;
+    height: 21px;
+    background-position: 0 -183px;
+}
+
+.music_voice_info .music_voice_bar {
+    width: 75px;
+    height: 4px;
+    margin-top: 3px;
+    background: rgba(255, 255, 255, 0.5);
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px;
+    position: absolute;
+    top: 5px;
+    left: 50px;
+}
+
+.music_voice_info .music_voice_bar .music_voice_line {
+    width: 100%;
+    height: 4px;
+    background: #fff;
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px;
+}
+
+.music_voice_info .music_voice_bar .music_voice_line .music_voice_dot {
+    width: 15px;
+    height: 15px;
+    /*50%就是一个半径为15px的圆*/
+    border-radius: 50%;
+    background: #fff;
+    position: relative;
+    top: -5px;
+    left: 100%;
+}
+
+/*设置背景*/
+.mask_bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: url("source/pic/album_cover.jpg") no-repeat 0 0;
+    /*拥有更高堆叠顺序(后面的数字)的元素总是会处于堆叠顺序较低的元素的前面 必需设置position才会生效*/
+    z-index: -1;
+    /*设置背景图像的尺寸 cover表示完全覆盖背景区域*/
+    background-size: cover;
+
+    /*高斯模糊*/
+    filter: blur(90px);
+}
+
+/*设置淡灰色遮罩*/
+.mask {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.35);
+}
+
+.login_mask{
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    /*display: none;*/
+}
+.login_table{
+    width: 300px;
+    height: 350px;
+    margin: 100px auto;
+    position: relative;
+    background: #fff;
+}
+.login_table table{
+    position: absolute;
+    top: 65px;
+    left: 60px;
+    text-align: left;
+    line-height: 30px;
+}
+.login_table a{
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    background:  url(source/pic/close.png) 0 0 no-repeat;
+    background-size: 18px 18px;
+    right: 3px;
+    top: 3px;
+    opacity: 0.5;
+}
+.login_table a:hover{
+    opacity: 1;
+}
+.login_table .s_login{
+    margin-top: 100px;
+    border: none;
+}
+/*设置scrollbar的大小 ._mCS_1表示文档中的第几个scroll*/
+._mCS_1 .mCSB_dragger .mCSB_dragger_bar {
+    width: 10px;
+    /*height: 10px;*/
+}
+
+._mCS_2 .mCSB_dragger .mCSB_dragger_bar {
+    width: 10px;
+    /*height: 10px;*/
+    /*border-radius: 50%;*/
+    /*opacity: 0.5;*/
+}
+
+
+

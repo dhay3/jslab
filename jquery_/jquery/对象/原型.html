@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /**
+         * 函数都有prototype属性,对象都用__proto__属性
+         * 函数的prototype和对象的__proto__都指向对应的原型对象(同一个东西)
+         *对应的原型对象中有constructor指向对应的函数
+         * prototype中的东西都是new出来的对象共享的
+         */
+        function Dog() {
+            return  new Dog.prototype.init();
+            //相当于执行init的构造函数就是init()本身，并且返回init的类；
+            //Dog.init();不是静态方法
+            //new Dog.init()函数没有这中调用，Dog.prototype才是对象
+            //虽然每一个Dog的实例有init()方法,但是不能new Dog().init()会调用Dog构造器进入递归
+        }
+
+        // 修改Dog的原型,Dog.prototype指的是Dog的原型（相当于给所有new出来的Dog类添加以下属性）
+        Dog.prototype = {
+            constructor: Dog,//原型的constructor对应函数
+            //初始化函数
+            init: function () {
+                this.name="aaa";
+                this.age=2;
+            },
+            say:function () {
+                console.log(this.name+" "+this.age);
+            }
+        };
+        //让Dog函数原型中的init函数的原型等于Dog函数的原型
+        Dog.prototype.init.prototype = Dog.prototype;//Dog的构造器就是init()
+        //a.prototype中有constructor,constructor指向函数Dog()
+        var a = new Dog();//没有new结果也一样,执行Dog的构造函数
+        //在调用say方法之前要调用init()
+        // a.init();
+        a.say();
+        console.log(a.name+a.age);
+        // console.log(Dog.age);函数没有属性,只有new出来的对象才有属性(除prototype外)
+        //每一个函数都有一个prototype属性
+        // console.log(Dog.prototype);
+        //每一个对象都有一个__proto__属性
+        // console.log(a.__proto__);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

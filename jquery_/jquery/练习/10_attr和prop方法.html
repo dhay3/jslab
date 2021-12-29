@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../jquery_scr/jquery-1.12.4.js"></script>
+    <script>
+        //attr是DOM对象的,prop是jquery对象
+        //任何对象都有属性,但是只有DOM对象有属性节点
+        $(function () {
+            var d1 = document.getElementById("d1");
+            //设置属性节点
+            d1.setAttribute("name", "div");
+            //获取属性节点
+            console.log(d1.getAttribute("name"));
+            //传入两个参数是表示设置属性节点
+            var $id = $("#d1").attr("class", "divC");
+            console.log($id);
+            //传入一参数时表示获取属性节点
+            var $id1 = $("#d1").attr("class");
+            console.log($id1);
+            //删除属性节点
+            $("#d1").removeAttr("class");
+            console.log(d1);
+            //如果想要删除多个属性节点中间加空格
+            $("#d1").removeAttr("class name");
+            //给对象添加一个demo属性,是在jquery的对象中
+            $("div:contains('is')").prop("demo", "ttt");
+            //获取对象的属性
+            var prop = $("div:contains('is')").prop("demo");
+            console.log(prop);
+            //移除对象指定的属性
+            // $("div:contains('is')").removeProp("demo");
+
+
+        });
+
+        function kk() {
+            var value = $("input")[0].value;
+            console.log(value);
+            $("img").attr("src", value);
+        }
+
+    </script>
+</head>
+<body>
+<div id="d1">this is a div</div>
+<input type="text">
+<img src="../瀑布流/pic/1.jpg">
+<button onclick="kk()">按钮</button>
+</body>
+</html>

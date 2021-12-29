@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #scroll {
+            border: 1px red solid;
+            width: 300px;
+            height: 300px;
+            overflow: auto;
+        }
+    </style>
+    <script src="../../jquery_scr/jquery-1.12.4.js"></script>
+    <script>
+        $(function () {
+
+            document.getElementsByTagName("button")[0].onclick = function () {
+                //获取滚动条移动的高度
+                var scrollH = $("#scroll").scrollTop();
+                //获取滚动条移动的宽度
+                var scrollW = $("#scroll").scrollLeft();
+                console.log(scrollH, scrollW);
+                //为了保证浏览器的兼容应使用如下的格式来获取网页滚动条移动的高度
+                //ie只能通过body来获取,其他浏览器通过htmL来获取
+                var scrollTop = $("html").scrollTop()+$("body").scrollTop();
+                console.log(scrollTop);
+            };
+
+            document.getElementsByTagName("button")[1].onclick = function () {
+                //调整滚动条移动的高度(参数不是一个字符串)
+                $("#scroll").scrollTop(100);
+                //调整滚动条移动的宽度(参数不是一个字符串)
+                $("#scroll").scrollLeft(20);
+                //为了保证浏览器兼容应使用如下格式来设置网页的滚动条高度
+                $("html.body").scrollTop(500);
+            };
+        });
+    </script>
+</head>
+<body>
+<div id="scroll">
+    this is a div this is a div this is a div this is a div this is a div this is a div <br>
+    this is a div this is a div this is a div this is a div this is a div this is a div <br>
+    this is a div this is a div this is a div this is a div this is a div this is a div <br>
+    this is a div this is a div this is a div this is a div this is a div this is a div <br>
+    this is a div this is a div this is a div this is a div this is a div this is a div <br>
+    this is a div this is a div this is a div this is a div this is a div this is a div <br>
+    this is a div this is a div this is a div this is a div this is a div this is a div <br>
+    this is a div this is a div this is a div this is a div this is a div this is a div <br>
+    this is a div this is a div this is a div this is a div this is a div this is a div <br>
+    this is a div this is a div this is a div this is a div this is a div this is a div <br>
+    this is a div this is a div this is a div this is a div this is a div this is a div <br>
+    this is a div this is a div this is a div this is a div this is a div this is a div <br>
+    this is a div this is a div this is a div this is a div this is a div this is a div <br>
+    this is a div this is a div this is a div this is a div this is a div this is a div <br>
+    this is a div this is a div this is a div this is a div this is a div this is a div <br>
+    this is a div this is a div this is a div this is a div this is a div this is a div <br>
+    this is a div this is a div this is a div this is a div this is a div this is a div <br>
+    this is a div this is a div this is a div this is a div this is a div this is a div <br>
+    this is a div this is a div this is a div this is a div this is a div this is a div <br>
+    this is a div this is a div this is a div this is a div this is a div this is a div <br>
+    this is a div this is a div this is a div this is a div this is a div this is a div <br>
+    this is a div this is a div this is a div this is a div this is a div this is a div <br>
+    this is a div this is a div this is a div this is a div this is a div this is a div <br>
+    this is a div this is a div this is a div this is a div this is a div this is a div <br>
+    this is a div this is a div this is a div this is a div this is a div this is a div <br>
+    this is a div this is a div this is a div this is a div this is a div this is a div <br>
+    this is a div this is a div this is a div this is a div this is a div this is a div <br>
+    this is a div this is a div this is a div this is a div this is a div this is a div <br>
+    this is a div this is a div this is a div this is a div this is a div this is a div <br>
+    this is a div this is a div this is a div this is a div this is a div this is a div <br>
+    this is a div this is a div this is a div this is a div this is a div this is a div <br>
+    this is a div this is a div this is a div this is a div this is a div this is a div <br>
+    this is a div this is a div this is a div this is a div this is a div this is a div <br>
+    this is a div this is a div this is a div this is a div this is a div this is a div <br>
+    this is a div this is a div this is a div this is a div this is a div this is a div <br>
+    this is a div this is a div this is a div this is a div this is a div this is a div <br>
+    this is a div this is a div this is a div this is a div this is a div this is a div <br>
+    this is a div this is a div this is a div this is a div this is a div this is a div <br>
+    this is a div this is a div this is a div this is a div this is a div this is a div <br>
+    this is a div this is a div this is a div this is a div this is a div this is a div <br>
+    this is a div this is a div this is a div this is a div this is a div this is a div <br>
+    this is a div this is a div this is a div this is a div this is a div this is a div <br>
+    this is a div this is a div this is a div this is a div this is a div this is a div <br>
+    this is a div this is a div this is a div this is a div this is a div this is a div <br>
+    this is a div this is a div this is a div this is a div this is a div this is a div <br>
+    this is a div this is a div this is a div this is a div this is a div this is a div <br>
+    this is a div this is a div this is a div this is a div this is a div this is a div <br>
+    this is a div this is a div this is a div this is a div this is a div this is a div <br>
+    this is a div this is a div this is a div this is a div this is a div this is a div <br>
+    this is a div this is a div this is a div this is a div this is a div this is a div <br>
+    this is a div this is a div this is a div this is a div this is a div this is a div <br>
+    this is a div this is a div this is a div this is a div this is a div this is a div <br>
+    this is a div this is a div this is a div this is a div this is a div this is a div <br>
+    this is a div this is a div this is a div this is a div this is a div this is a div <br>
+</div>
+<button>获取scroll</button>
+<button>设置</button>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /*#con {*/
+        /*    !*border: 1px black solid;*!*/
+        /*    margin: 100px auto;*/
+        /*    width: 400px;*/
+        /*    height: 100px;*/
+        /*}*/
+        #u1 {
+            /*如果给li加了border ul的尺寸也要变*/
+            width: 604px;
+            height: 52px;
+            margin: 100px auto;
+            background-color: red;
+        }
+
+        #u1 > li {
+            border: 1px black solid;
+            height: 50px;
+            width: 150px;
+            list-style: none;
+            float: left;
+            line-height: 50px;
+            text-align: center;
+            color: white;
+            border-right: none;
+        }
+
+        #u1 > li:hover {
+            background-color: blue;
+
+        }
+
+        #u1 > li:nth-child(4) {
+            border-right: 1px black solid;
+        }
+
+        .u2 {
+            display: none;
+        }
+
+        .u2 > li {
+            list-style: none;
+            border-top: 1px black solid;
+            padding: 10px;
+            text-align: center;
+            line-height: 20px;
+            background-color: deeppink;
+        }
+
+        .u2 > li:hover {
+            background-color: deepskyblue;
+        }
+    </style>
+    <script src="../../jquery_scr/jquery-1.12.4.js"></script>
+    <script>
+        //在执行动画之前最好先调用stop方法
+        $(function () {
+            $("#u1>li").mouseenter(function () {
+                // console.log($(this).children(".u2"));
+                //每次再调用动画时先停止当前前的动画
+                // $(this).children(".u2").stop();
+                // $(this).children(".u2").slideDown(1000);
+                //链操作
+                $(this).children(".u2").stop().slideDown(1000);
+
+            });
+            $("#u1>li").mouseleave(function () {
+                $(this).children(".u2").stop();
+                $(this).children(".u2").slideUp();
+
+            });
+        });
+    </script>
+</head>
+<body>
+
+<!--    ul#u1>li{下拉菜单}*4-->
+<ul id="u1">
+    <li>下拉菜单
+        <ul class="u2">
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+        </ul>
+    </li>
+    <li>下拉菜单
+        <ul class="u2">
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+        </ul>
+    </li>
+    <li>下拉菜单
+        <ul class="u2">
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+        </ul>
+    </li>
+    <li>下拉菜单
+        <ul class="u2">
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+        </ul>
+    </li>
+</ul>
+
+</body>
+</html>

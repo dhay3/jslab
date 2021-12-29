@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var a = {
+            "name": "zs",
+            "age": 32,
+            "gender": "male"
+        };
+        var b = [["name", 1], ["age", 23]];
+        //for in 用于遍历对象,取键
+        // for (var key in a) {
+        //     console.log(key);
+        // }
+
+        //for of 不能遍历对象
+        for (var [key, value] of b) {
+            console.log(key,value);
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

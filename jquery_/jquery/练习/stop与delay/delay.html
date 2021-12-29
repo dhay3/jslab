@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: relative;
+            top: 50px;
+            /*bottom:50px;*/
+            /*display: none;*/
+        }
+    </style>
+     <script src="../../../jquery_scr/jquery-1.12.4.js"></script>
+         <script>
+             // $(function () {
+             //    $("div").fadeOut(2000).delay(1000).show(200);
+             // });
+
+             // $(function () {
+             //    $("div").show(2000)
+             // });
+
+             $(function () {
+                 //delay对css没有用,只对动画有效
+                $("div").animate({
+                    width:"200px"
+                },5000).delay(7000).css("background","blue");
+             })
+         </script>
+</head>
+<body>
+<div></div>
+</body>
+</html>

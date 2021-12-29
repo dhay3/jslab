@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*在position与float同时使用是都是position先生效*/
+        /*position为absolute与fixed时float都不会生效*/
+        /*position为static与relative时float会生效*/
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #m1 {
+            float: left;
+            width: 150px;
+            height: 250px;
+            margin: 200px auto;
+            top: 200px;
+            left: 0px;
+            position: fixed;
+        }
+
+        #m2 {
+            float: right;
+            width: 150px;
+            height: 250px;
+            margin: 200px auto;
+            top: 200px;
+            right: 0px;
+            position: fixed;
+        }
+
+        img {
+            display: none;
+        }
+    </style>
+    <script src="../../jquery_scr/jquery-1.12.4.js"></script>
+    <script>
+        $(function () {
+            //监听网页滚动，不带双引号
+            $(window).scroll(function () {
+                //获取网页滚动的距离
+                // console.log($("html").scrollTop());
+                var scrollTop = $("html").scrollTop();
+                if (scrollTop >= 500) {
+                    //滚到500时调用显示动画
+                    $("img").show(1000);
+                } else {
+                    //其他的时候都是隐藏，回滚小于500时隐藏出现
+                    $("img").hide(1000);
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+<img src="../电影排行/p2574172427.jpg" alt="" id="m1">
+<img src="../电影排行/p2576088318.jpg" alt="" id="m2">
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

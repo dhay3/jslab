@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #d1 {
+            height: 100px;
+            width: 100px;
+            background-color: red;
+            /*div display默认block,带换行*/
+        }
+
+        #d2 {
+            height: 100px;
+            width: 100px;
+            background-color: blue;
+        }
+
+        /*行内元素宽高默认为里面的文字或是行内元素的大小*/
+        #s1 {
+            height: 100px;
+            width: 100px;
+            background-color: violet;
+            /*span display默认inline,inline不会显示,不带换行*/
+            /*display: inline;*/
+            /*行内块元素,不带换行*/
+            /*display: inline-block;*/
+        }
+
+        #s2 {
+            height: 100px;
+            width: 100px;
+            background-color: greenyellow;
+            /*display: inline-block;*/
+        }
+
+        #s1 > div {
+            height: 50px;
+            width: 50px;
+            /*改变块级元素为行内元素*/
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+<div id="d1">d1</div>
+<div id="d2">d2</div>
+<br>
+<span id="s1"><div>d3</div>s1</span>
+<span id="s2">s2</span>
+</body>
+</html>

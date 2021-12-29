@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .d1 {
+            display: compact;
+        }
+    </style>
+    <script src="../../jquery_scr/jquery-1.12.4.js"></script>
+    <script>
+        //css方法可以理解为追加
+        //逐个设置
+        $(function () {
+            $("div").css("width", "100px");
+            $("div").css("height", "100px");
+            $("div").css("background", "red");
+        });
+        //链式设置
+        //链式设置建议不超过3步
+        $(function () {
+            $("div").css("box-shadow", "0 0 10px green").css("border-radius", "10px").css("background", "blue");
+        });
+        //批量设置(推荐使用)
+        $(function () {
+            //传入一个对象
+            $("div").css(
+                {
+                    border: "10px black solid",
+                    position: "relative",
+                    left: "100px"
+                }
+            )
+        });
+        //获取css值
+        $(function () {
+            //传进去的参数就是想要获得的值
+            var jQuery = $("div").css("position");
+            console.log(jQuery);
+        })
+    </script>
+</head>
+<body>
+<div></div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            /*文档默认都有margin与padding的初始值*/
+            margin: 0px;
+            padding: 0px;
+        }
+
+        div {
+            height: 100px;
+            width: 100px;
+            background: red;
+            /*auto 会让margin的bottom与top设置的尺寸一样，left与right自动填充网页大小*/
+            margin: 100px auto;
+            /*padding: 100px;*/
+            /*margin与float同时出现时float优先*/
+            float: left;
+
+            /*让文字垂直并居中div*/
+            text-align: center; /*水平居中*/
+            line-height: 100px; /*垂直居中,要与设置的height一样才会居中*/
+        }
+
+        /*设置html大小与网页大小一致*/
+        /*html {*/
+        /*    width: 100%;*/
+        /*    height: 100%;*/
+        /*}*/
+
+        /*逗号表似选择html和body*/
+        /*空格表示选组html中的body*/
+        /*html, body {*/
+        /*    height: 100%;*/
+        /*    width: 100%;*/
+        /*}*/
+    </style>
+    <script src="../../../jquery_scr/jquery-1.12.4.js"></script>
+    <script>
+        $(function () {
+            //div的height和width是不变的,margin与padding只是在效果上增加了这个div
+            console.log($("div").height());
+        });
+    </script>
+</head>
+<!--body标签会根据中间内容大小而调整，html标签也是-->
+<body>
+<div>1</div>
+</body>
+</html>

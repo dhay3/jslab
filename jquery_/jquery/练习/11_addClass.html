@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../jquery_scr/jquery-1.12.4.js"></script>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .class1{
+            height: 100px;
+            width: 100px;
+            background: red;
+        }
+        .class2{
+            border: 10px black solid;
+        }
+        .class3{
+            height: 100px;
+            width: 100px;
+            box-shadow: 0 0 5px deeppink;
+            /*background: blue;*/
+        }
+    </style>
+    <script>
+            $(
+                function () {
+                    var $buttonElement0 = document.getElementsByTagName("button")[0];
+                    $buttonElement0.onclick = function () {
+                        var div = $("div");
+                        //给元素添加类(中间空格表示添加多个class(css样式))
+                        div.addClass("class1 class2");
+
+                    };
+                    //获取class名字不是.class而是.className
+                    //主要用于一个或多个元素添加css样式
+                    //这样在控制台是无法显示添加的class
+                    // console.log(document.getElementsByTagName("button")[0].className);
+                    var $buttonElement1 = document.getElementsByTagName("button")[1];
+                    $buttonElement1.onclick = function () {
+                        var div = $("div");
+                        //删除类(如果想删除多个类名间用空格隔开)
+                        div.removeClass("class2");
+                    };
+                    var $buttonElement2 = document.getElementsByTagName("button")[2];
+                    $buttonElement2.onclick = function () {
+                        var div = $("div");
+                        //替换类 如果有就删除,没有就添加(不是切换哦)
+                        div.toggleClass("class1 class2 class3");
+                    }
+
+                }
+            );
+
+    </script>
+</head>
+<body>
+<button>添加类</button>
+<button>删除类</button>
+<button>切换类</button>
+<br><br>
+<div></div>
+</body>
+</html>

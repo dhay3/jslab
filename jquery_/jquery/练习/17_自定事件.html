@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../jquery_scr/jquery-1.12.4.js"></script>
+    <script>
+        //自定义事件一定要通过on来绑定,事件一定是通过trigger来触发
+        $(function () {
+            $("#d1").on("myClick",my);
+            $("#d1").trigger("myClick");
+
+        });
+        function my() {
+            alert("自定事件");
+        }
+    </script>
+</head>
+<body>
+<div id="d1" style="height: 100px;width: 100px;border: 1px red solid">
+    <div id="d2" style="height: 50px;width: 50px;border: 1px darkolivegreen solid">
+
+    </div>
+</div>
+</body>
+</html>

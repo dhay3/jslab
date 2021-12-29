@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--    css代码与html并行加载-->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+
+        div {
+            width: 100%;
+            height: 100%;
+            background: blue no-repeat 0 0;
+            background-size: cover;
+            /*position: relative;*/
+            /*top: 100px;*/
+            /*left: 0;*/
+        }
+    </style>
+    <script src="../../jquery_scr/jquery-1.12.4.js"></script>
+    <script>
+        $(function () {
+            // $("div").css("background","red");
+            $("div").css({
+                background: 'url("../../css+html+js/pic/1.jpg") no-repeat 0 0',
+                //带下划线的属性用首字母大写表示
+                marginTop:"100px"
+            });
+        });
+    </script>
+</head>
+<body>
+<div></div>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <!--    key是css属性名, value是属性值-->
+    <!--    {key:value}-->
+    <!--    属性名直接使用驼峰标识-->
+    <!--    该版本不支持驼峰命名-->
+    <p :style="{'font-size': finalSize,'color':finalColor}">{{msg}}</p>
+</div>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      msg: 'hello',
+      finalSize: '100px',
+      finalColor: 'red'
+    }
+  });
+</script>
+</html>

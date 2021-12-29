@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图标特效</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            height: 400px;
+            width: 500px;
+            border: 1px black solid;
+            margin: 50px auto;
+        }
+
+        li {
+            list-style: none;
+            text-align: center;
+            line-height: 40px;
+            height: 150px;
+            width: 200px;
+            /*border: 1px black solid;*/
+            float: left;
+            margin-top: 50px;
+            margin-right: 50px;
+            /*li中的内容溢出时影藏溢出的元素*/
+            overflow: hidden;
+        }
+        span{
+            height: 50px;
+            width: 50px;
+            position: relative;
+        }
+        img{
+            height: 50px;
+            width: 50px;
+        }
+        p{
+            color: deeppink;
+
+        }
+        p:hover{
+            color: blue;
+        }
+    </style>
+     <script src="../../jquery_scr/jquery-1.12.4.js"></script>
+         <script>
+             $(function () {
+                $("li").mouseenter(function () {
+                    // var index = $(this).index();
+                    // console.log(index);
+                    console.log($(this).children("span").children("img"));
+                    $(this).children("span").animate({
+                        //图标上移
+                       top:-50
+                    },700,function () {
+                        //图片下移,瞬发执行
+                        $(this).css({
+                            top: 100
+                        });
+                        //图片复位
+                        $(this).animate({
+                            top:0
+                        },700);
+                    })
+                });
+             });
+         </script>
+</head>
+<body>
+<ul>
+    <li><span><img src="../瀑布流/pic/1.jpg" alt=""></span>
+        <p>百度</p></li>
+    <li><span><img src="../瀑布流/pic/2.jpg" alt=""></span>
+        <p>优酷</p></li>
+    <li><span><img src="../瀑布流/pic/3.jpg" alt=""></span>
+        <p>土豆</p></li>
+    <li><span><img src="../瀑布流/pic/4.jpg" alt=""></span>
+        <p>京东</p></li>
+</ul>
+</body>
+</html>

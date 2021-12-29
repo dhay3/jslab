@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../jquery_scr/jquery-1.12.4.js"></script>
+    <script>
+        $(function () {
+            function A() {
+                return new A.prototype.init();
+            }
+
+            A.prototype = {
+                a: 10,
+                c:20,
+                init: function () {
+                    this.a = 3;//因为时公有变量才会覆盖原有的a
+                    // var a=3;//私有变量不会覆盖原有的a
+                    this.aa=12;//相当于向init类添加了a和aa公有变量
+                    // this.a;
+                    // this.aa;
+                    // a=3;
+                    // aa=12;
+                }
+            };
+            A.prototype.init.prototype=A.prototype;
+            console.log(A.prototype.init.prototype);//这里的a还是10;
+            var b = new A();
+            //new A的时候执行了A的构造器(A();),在A()中执行了init()的构造器所以init()的this.a会覆盖B的a;
+            console.log(b.a);//3
+            console.log(b.c);
+            console.log(b.aa);
+            // b.init();
+            // // console.log(b.a);
+            // console.log(b.aa);
+
+            // var init = new A.prototype.init();//应为init()是实例方法（不能定义在类中）A.init（）
+            // console.log(init.a);
+            // console.log(init.aa);
+
+
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

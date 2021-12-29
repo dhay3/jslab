@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <father></father>
+    <child></child>
+</div>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+  //创建子组件
+  const child = Vue.extend({
+    template:
+        `
+      <div>
+            <p>这是一个子组件</p>
+            <p>child</p>
+      </div>
+      `
+  });
+  //有现后顺序
+  const father = Vue.extend({
+    template:
+                `
+        <div>
+            <p>这是一个父组件</p>
+            <p>parent</p>
+            <child></child>
+        </div>
+    `,
+    //父级组件包含子组件
+    components: {
+      // es6写法
+      child
+      // child: child
+    }
+  });
+
+  Vue.component('father', father);
+  // Vue.component('child', child);
+  new Vue({
+    el: '#app',
+    data: {}
+  });
+</script>
+</html>

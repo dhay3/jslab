@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../jquery_scr/jquery-1.12.4.js"></script>
+    <script>
+        $(function () {
+            function Dog() {
+
+            }
+
+            Dog.prototype = {
+                constructor: Dog,
+                f1: function (a) {
+                    this.a = a;
+                    this.b = a;
+                },
+                f2: function () {
+                    console.log(this.a);
+                },
+            };
+
+            var d1 = new Dog();
+            console.log(d1.a);
+            console.log(d1.b);
+            console.log("----");
+            var d2=new Dog.prototype.f1(3);
+            console.log(d2.a);
+            console.log(d2.b);
+            //说明是添加到f1的类中的不是Dog中的;
+
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

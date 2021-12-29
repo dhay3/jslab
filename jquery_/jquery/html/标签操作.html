@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /**
+         * node是element的父类
+         * @type {f}
+         */
+        window.onload = f;
+        window.addEventListener("load",f1);
+        window.addEventListener("load",f2);
+        window.addEventListener("load",f3);
+        window.addEventListener("load",f4);
+        window.addEventListener("load",f5);
+
+        //不在onload中无法获取到变量
+        // i1 = document.getElementsByName("i1");
+        // i2 = document.getElementById("i2");
+        // d1 = document.getElementById("d1");
+        function f() {
+            i1 = document.getElementsByName("i1");
+            i2 = document.getElementById("i2");
+            d1 = document.getElementById("d1");
+            i3 = document.getElementById("i3");
+            //获取属性
+            var attribute = i1[2].getAttribute("value");
+            var value = i1[0].value;
+            alert(value);
+            alert(attribute);
+        }
+
+        function f1() {
+            //获取子标签
+            var childNodes = d1.childNodes;
+            //方法一在方法二之前运行之前直接跳转到了write的页面,方法二获取不到对象
+            // document.write(childNodes.length);
+            alert(childNodes[0].nodeType);
+        }
+        function f2() {
+            //获取父标签
+            var parentNode = i2.parentNode;
+            //获取父标签的属性名
+            alert(parentNode.nodeName);
+        }
+        //添加标签
+        function f3() {
+            //获取body标签
+            var body = document.body;
+            //生成一个input标签
+            var input = document.createElement("input");
+            input.type = "button"; input.value = "按钮";
+            //一定要添加标签
+            body.appendChild(input);
+        }
+
+        function f4() {
+            // var d1 = document.getElementById("d1");
+            // var i2 = document.getElementById("i2");
+            var p = document.createElement("p");
+            p.innerHTML = "hello world";
+            d1.insertBefore(p,i2);
+        }
+        //移除标签
+        function f5() {
+            d1.removeChild(i3);
+        }
+
+    </script>
+</head>
+<body>
+<div id="d1" name="div">
+    <input type="text" value="chz" name="i1" id="i3">
+    <input type="text" value="zs" name="i1">
+    <input type="text" value="ls" name="i1" id="i2">
+</div>
+</body>
+</html>

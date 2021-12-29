@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        div {
+            height: 100px;
+            width: 100px;
+            background-color: red;
+            display: none;
+        }
+    </style>
+    <script src="../../../jquery_scr/jquery-1.12.4.js"></script>
+    <script>
+        $(function () {
+
+            $("button").eq(0).click(function () {
+                // $("div").css({
+                //     display: "block"
+                // });
+                //动画显示参数是动画的时间,动画执行完毕时调用的函数
+                $("div").show(1000,function () {
+                    alert("显示");
+                });
+            });
+
+            $("button").eq(1).click(function () {
+                // $("div").css({
+                //     display: "none"
+                // });
+                // $("div").hide(1000);
+                //动画隐藏参数是动画的时间,动画执行完毕时调用的函数
+                $("div").hide(1000,function () {
+                    alert("隐藏");
+                });
+            });
+
+            $("button").eq(2).click(function () {
+                // $("div").css({
+                //     background: "blue",
+                //     display: "block"
+                // });
+                //如果是显示就隐藏,如果是隐藏就显示,动画执行完毕时调用的函数
+                $("div").slideToggle(1000,function () {
+                    alert("切换");
+                })
+            });
+        });
+    </script>
+</head>
+<body>
+<button>显示</button>
+<button>隐藏</button>
+<button>更换</button>
+<div></div>
+</body>
+</html>

@@ -1,0 +1,10 @@
+<div class="fixedIndexs" style="position: fixed;bottom: 40px;display: none"></div>
+<script language="javascript" type="text/javascript" src="https://blog-static.cnblogs.com/files/kikochz/list.js"></script>
+<div><canvas id="matrixBG"></canvas></div>
+<script language="javascript" type="text/javascript" src="https://blog-static.cnblogs.com/files/kikochz/matrix.js"></script>
+<script  src="https://blog-static.cnblogs.com/files/kikochz/clipboard.js"></script>
+<script  src="https://blog-static.cnblogs.com/files/kikochz/cp.js"></script>
+
+
+
+<script  src="https://blog-static.cnblogs.com/files/kikochz/comment.js"></script>

@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+#cnblogs_post_body p {
+    font-size: 16px;
+    margin: 10px auto;
+    text-indent: 0;
+    font-family: "Noto Sans SC";
+    font-weight: 100;
+}
+
+/*隐藏选项*/
+#sidebar_topviewedposts {
+    display: none;
+}
+
+#sidebar_topdiggedposts {
+    display: none;
+}
+
+#div_digg {
+    display: none;
+}
+
+.catListPostArchive {
+    display: none;
+}
+
+#navigator {
+    border-bottom: none;
+    border-top: none;
+}
+
+#home {
+    background-color: transparent;
+    float: left;
+    width: 80%;
+    box-shadow: none;
+}
+
+a:hover {
+    color: deeppink !important;
+}
+
+/*侧边栏*/
+#sideBarMain h3, .newsItem h3 {
+    font-size: 1.2em;
+    height: 50px;
+    line-height: 50px;
+    text-indent: 0.5em;
+    padding: 0 0 0 10px;
+    margin-bottom: 0;
+    border-left-width: 5px;
+    border-radius: 10px;
+    border-right-width: 5px;
+}
+#sidebar_shortcut {
+    border: 1px solid transparent;
+}
+.newsItem, .catListComment, .catListEssay, .catListView, .catListFeedback,
+#blog-calendar, #sidebar_postcategory, #sidebar_postcategory, #sidebar_postarchive, #sidebar_search {
+    border-radius: 10px;
+    box-shadow: 1px 2px 3px #A7A8AD;
+    background-color: #fff;
+}
+
+#sideBarMain ul {
+    background-color: #fff;
+    padding: 15px 20px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+#sideBarMain li {
+    line-height: 40px;
+    border-bottom: 1px solid #ddd;
+    font-size: 14px;
+}
+
+#profile_block {
+    padding: 0 0 0 10px;
+    margin-top: 5px;
+    line-height: 1.5;
+    text-align: left;
+}
+
+#sidebar_search_box {
+    padding: 0 0 0 10px;
+}
+
+/*评论*/
+.blog_comment_body {
+    background: #B2E866;
+    float: left;
+    border-radius: 5px;
+    position: relative;
+    overflow: visible;
+    margin-left: 33px;
+    max-width: 700px;
+}
+
+.feedbackListSubtitle a.layer {
+    background: #B2E866;
+    color: #414141 !important;
+    padding: 2px 4px;
+    border-radius: 2px;
+}

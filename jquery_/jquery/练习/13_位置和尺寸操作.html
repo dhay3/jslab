@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #father {
+            border: 20px black solid;
+            width: 100px;
+            height: 100px;
+            background: greenyellow;
+            border-radius: 20px;
+        }
+
+        #son {
+            width: 50px;
+            height: 50px;
+            background: red;
+            position: absolute;
+            top: 50px;
+            bottom: 50px;
+            left: 50px;
+            right: 50px;
+
+        }
+    </style>
+    <script src="../../jquery_scr/jquery-1.12.4.js"></script>
+    <script>
+        $(function () {
+
+            document.getElementsByTagName("button")[0].onclick = function () {
+                //当括号里没加参数表示获取
+                //position方法只能获取不能设置
+                var position = $("#son").position();
+                var width = $("#son").width();
+                var height = $("#son").height();
+                console.log("position",position,"width:",width,"height",height);
+            };
+            document.getElementsByTagName("button")[1].onclick = function () {
+                //参数中都可以传对象
+                $("#father").offset(
+                    {
+                        left:"200px",
+                        right:"200px"
+                    }
+                );
+                 $("#father").width(300);
+                $("#father").height(300);
+                // console.log("position",position,"width:",width,"height",height);
+            };
+        });
+    </script>
+</head>
+<body>
+<div id="father">
+    <div id="son">
+    </div>
+</div>
+<button>获取信息</button>
+<button>设置信息</button>
+</body>
+</html>

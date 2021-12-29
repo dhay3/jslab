@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <!--    lazy懒加载, 只有在回车的时候才会显示-->
+    <input type="text" v-model.lazy="msg">
+    <h2>{{msg}}</h2>
+    <!--    number将用户输入的值转为数值类型-->
+    <input type="number" v-model.number="age">
+    <h2>{{age}}:{{typeof age}}</h2>
+
+    <input type="text" v-model.trim="str">
+    <h2>{{str}}</h2>
+</div>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      msg: '',
+      age: '',
+      str: '               hello world'
+    }
+  });
+</script>
+</html>

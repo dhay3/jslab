@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*行内样式>id选择器>类选择器>元素选择器*/
+        /*带id的就是id选择器*/
+        #d1 div{
+            height: 100px;
+            width: 100px;
+            background: red;
+        }
+        /*被覆盖*/
+        .d3{
+            height: 100px;
+            width: 100px;
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+<div id="d1">
+    <div class="d2">
+        <div class="d3"></div>
+    </div>
+</div>
+</body>
+</html>

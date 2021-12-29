@@ -1,0 +1,127 @@
+/*markdown添加按钮*/
+.cnblogs-markdown pre {
+    position: relative;
+}
+
+.cnblogs-markdown pre > span {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 2px;
+    padding: 0 10px;
+    font-size: 12px;
+    background: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    cursor: pointer;
+    display: none;
+}
+
+.cnblogs-markdown pre:hover > span {
+    display: block;
+}
+
+.cnblogs-markdown pre > .copyed {
+    background: #67c23a;
+}
+
+/**
+ * Shades of Purple Theme — for Highlightjs.
+ *
+ * @author (c) Ahmad Awais <https://twitter.com/mrahmadawais/>
+ * @link GitHub Repo → https://github.com/ahmadawais/Shades-of-Purple-HighlightJS
+ * @version 1.5.0
+ */
+pre {
+    /*控制代码不换行*/
+    white-space: pre;
+    word-wrap: normal;
+}
+
+.cnblogs-markdown .hljs {
+    display: block;
+    overflow-x: auto;
+    /* Custom font is optional */
+    /* font-family: 'Operator Mono', 'Fira Code', 'Menlo', 'Monaco', 'Courier New', 'monospace';  */
+    padding: 0.5em;
+    background: #2d2b57 !important;
+    font-weight: normal;
+}
+
+.cnblogs-markdown .hljs-title {
+    color: #fad000;
+    font-weight: normal;
+}
+
+.cnblogs-markdown .hljs-name {
+    color: #a1feff;
+}
+
+.cnblogs-markdown .hljs-tag {
+    color: #ffffff;
+}
+
+.cnblogs-markdown .hljs-attr {
+    color: #f8d000;
+    font-style: italic;
+}
+
+.cnblogs-markdown .hljs-built_in,
+.cnblogs-markdown .hljs-selector-tag,
+.cnblogs-markdown .hljs-section {
+    color: #fb9e00;
+}
+
+.cnblogs-markdown .hljs-keyword {
+    color: #fb9e00;
+}
+
+.cnblogs-markdown .hljs,
+.cnblogs-markdown .hljs-subst {
+    color: #e3dfff;
+}
+
+.cnblogs-markdown .hljs-string,
+.cnblogs-markdown .hljs-attribute,
+.cnblogs-markdown .hljs-symbol,
+.cnblogs-markdown .hljs-bullet,
+.cnblogs-markdown .hljs-addition,
+.cnblogs-markdown .hljs-code,
+.cnblogs-markdown .hljs-regexp,
+.cnblogs-markdown .hljs-selector-class,
+.cnblogs-markdown .hljs-selector-attr,
+.cnblogs-markdown .hljs-selector-pseudo,
+.cnblogs-markdown .hljs-template-tag,
+.cnblogs-markdown .hljs-quote,
+.cnblogs-markdown .hljs-deletion {
+    color: #4cd213;
+}
+
+.cnblogs-markdown .hljs-meta,
+.cnblogs-markdown .hljs-meta-string {
+    color: #fb9e00;
+}
+
+.cnblogs-markdown .hljs-comment {
+    color: #ac65ff;
+}
+
+.cnblogs-markdown .hljs-keyword,
+.cnblogs-markdown .hljs-selector-tag,
+.cnblogs-markdown .hljs-literal,
+.cnblogs-markdown .hljs-name,
+.cnblogs-markdown .hljs-strong {
+    font-weight: normal;
+}
+
+.cnblogs-markdown .hljs-literal,
+.cnblogs-markdown .hljs-number {
+    color: #fa658d;
+}
+
+.cnblogs-markdown .hljs-emphasis {
+    font-style: italic;
+}
+
+.cnblogs-markdown .hljs-strong {
+    font-weight: bold;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var data = 10;
+        function fn1() {
+            var data = 100;
+            alert(data);//此时的data为100
+            fn2();
+            alert(data);   //此时的data为10000
+            function fn2() {
+                data = 1000;
+                fn3();
+                function fn3() {
+                    data = 10000;
+                }
+            }
+        }
+        fn1();
+        console.log(data); //此时的data为10
+// 等价
+        function fn1() {
+            function fn2() {
+                function fn3() {
+                    data = 10000;
+                }
+                data = 1000;
+                fn3();
+            }
+            var data = 100;
+            alert(data);//此时的data为100
+            fn2();
+            alert(data);   //此时的data为10000
+
+        }
+        var data = 10;
+        fn1();
+        console.log(data); //此时的data为10
+    </script>
+</head>
+<body>
+
+</body>
+</html>

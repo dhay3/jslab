@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+    <script src="../../jquery_scr/jquery-1.12.4.js"></script>
+    <script>
+        $(function () {
+            $("li").each(function (i, e) {
+                // console.log(typeof (e));
+                // console.log(e);//element是dom对象只能调用dom的方法
+                // e.innerHTML = 2;
+                // console.log(e.eq(0));方法失效
+                console.log($(e).eq(0).html(2));//$()可以转成jquery对象
+            });
+            // console.log(typeof ($("li")));
+            // console.log($("li").eq(0));
+        });
+    </script>
+</head>
+<body>
+<ul>
+    <li>
+        <div>1</div>
+    </li>
+    <li>
+        <div>2</div>
+    </li>
+    <li>
+        <div>3</div>
+    </li>
+</ul>
+</body>
+</html>

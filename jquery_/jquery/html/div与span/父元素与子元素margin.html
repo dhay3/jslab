@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .d1 {
+            width: 200px;
+            height: 200px;
+            background: red;
+            /*如果不给父元素加border,子元素中的内容与父元素中的内容融合,margin-top和margin-bottom属性失效*/
+            border: 1px solid transparent;
+            box-sizing: border-box;
+            /*display: inline-block;*/
+            /*txa快捷键*/
+            text-align: center;
+
+        }
+
+        .d2 {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            /*快捷键bg*/
+            background: blue;
+            margin-top: 50px;
+            /*margin: 20px 20px 20px 20px ;*/
+        }
+    </style>
+</head>
+<body>
+<div class="d1">
+    <div class="d2"></div> 这是
+</div>
+</body>
+</html>

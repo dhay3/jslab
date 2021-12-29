@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sd</title>
+    <style>
+
+        div {
+            width: 100px;
+            height: 100px;
+            margin-top: 20px;
+        }
+
+        #d1 {
+            background-color: red;
+        }
+
+        #d2 {
+            background-color: blue;
+        }
+    </style>
+    <script src="../../../jquery_scr/jquery-1.12.4.js"></script>
+    <script>
+        $(function () {
+            $("button").eq(0).click(function () {
+                animate1 = $("#d1").animate({
+                    width: '+=800'
+                }, 5000, function () {
+                    //链式(执行完上一个动画再执行)
+                    //delay表示延迟几秒后再执行
+                  console.log("hello world")
+                }).delay().animate({
+                    height: '+=100'
+                }, 2000);
+                animate2 = $("#d2").animate({
+                    width: '+=800'
+                }, 7000, function () {
+
+                }).animate({
+                    height: '+=100'
+                }, 2000);
+            });
+            // var click1 = $("button").eq(0).click(function () {
+            $("button").eq(1).click(function () {
+                //停止当前正在运行的动画,执行后面的动画
+                $("#d1").stop();
+                // $("#d1").stop(false);
+                // $("#d1").stop(false,false);
+
+                // 停止当前及后续的动画
+                // $("#d2").stop(true);
+                // $("#d2").stop(true,false);
+
+                //立即完成当前的,继续执行后续动画
+                // $("#d2").stop(false,true);
+
+                //立即完成当前的,停止后续动画
+                $("#d2").stop(true, true);
+            });
+        });
+
+
+    </script>
+</head>
+<body>
+<button>开始动画</button>
+<button>停止动画</button>
+<div id="d1"></div>
+<div id="d2"></div>
+</body>
+</html>

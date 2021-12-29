@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>微博</title>
+    <style>
+        * {
+            /*表示图片不会被重复利用*/
+            /*background: no-repeat;*/
+            margin: 0;
+            padding: 0;
+        }
+
+        /*文本框默认为行内元素*/
+        .ar {
+            width: 300px;
+            height: 150px;
+            margin-top: 100px;
+            margin-left: 500px;
+            /*background: red;*/
+            display: block;
+            /*设置禁止拖拽*/
+            resize: none;
+            /*设置选中取消蓝框*/
+            /*outline: none;*/
+            /*文本框有border属性*/
+            /*border: none;*/
+        }
+
+        .but {
+            width: 82px;
+            height: 30px;
+            color: white;
+            background-color: #f40;
+            /*设置按钮边框为无*/
+            border: none;
+            margin-left: 712px;
+            margin-top: 5px;
+        }
+
+        #d2 {
+            margin-top: 20px;
+            margin-left: 712px;
+        }
+
+        button {
+            display: none;
+        }
+    </style>
+    <script src="../../jquery_scr/jquery-1.12.4.js"></script>
+    <script>
+        $(function () {
+            $(".but").click(function () {
+                //获取文本框中的内容
+                // console.log($(".ar").val());
+                $("#d2").append($(".ar").val()).children("button").toggle(0);
+            });
+            $("button").click(function () {
+                $(this).parent().remove();
+            });
+        });
+    </script>
+</head>
+<body>
+<div><textarea class="ar"></textarea>
+    <input type="submit" value="发布" class="but"/></div>
+<!--disable让按钮失效-->
+<div id="d2">
+    <button disabled>删除</button>
+</div>
+</body>
+</html>

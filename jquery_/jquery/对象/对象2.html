@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function Person(name,age) {
+           this.name=name;
+           this.age=age;
+           document.write(111);
+        }
+        // Person();这是调用与引用(Person;可以理解为c的指针)不一样
+        var son=new Person("zs",2);
+        //prototype(原型)是共享的属性或方法
+        // Person.prototype.career="t";//如果加了prototype的属性可以被子类继承
+        // Person.career="t";//不加prototype不能被子类继承,但是自己能调用
+        son.career="s";//单独给son添加一个career属性
+        console.log(Person.career);
+        console.log(son.career);//这里的career不是son的实际上是person的
+        // console.log(son().career);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../jquery_scr/jquery-1.12.4.js"></script>
+    <script>
+        //暂停入口函数
+        $.holdReady(true);
+        $(function () {
+            alert("ready事件")
+        });
+
+    </script>
+</head>
+<body>
+<button>按钮</button>
+<script>
+
+    var $buttonElement = $("button")[0];
+    $buttonElement.onclick = function () {
+        //激活入口函数
+        $.holdReady(false);
+    }
+</script>
+</body>
+</html>

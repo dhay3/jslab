@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            //用户是在for运行完后点击的所以i是5
+            for (var i = 0; i < 5; i++) {
+                // 这里是一个闭包,局部变量i会保留,等待onclick方法触发
+                document.getElementsByTagName("div")[0].onclick = function () {
+                    alert(i);
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="d"></div>
+</body>
+</html>

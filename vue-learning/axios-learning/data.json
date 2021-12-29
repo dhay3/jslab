@@ -1,0 +1,12 @@
+{
+  "success": true,
+  "code": 2000,
+  "message": "成功",
+  "data": {
+    "users": [
+      {"name": "lucy","age": 20},
+      {"name": "marry","age": 30},
+      {"name": "jack","age": 40}
+    ]
+  }
+}

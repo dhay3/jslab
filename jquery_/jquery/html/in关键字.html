@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //数组和对象类型都是对象,但是对象没有length属性
+        var a = ["ae", "b", "e", "4"];
+        console.log(a);
+        console.log(typeof a);
+        console.log(length in a);
+        console.log("0" in a);//数组中判断索引(但是加了引号同样返回true)
+        console.log("ae" in a);//false
+        // var b={
+        //     "name":"chz",
+        //     "age":23
+        // };
+
+        //只有当key的值是从零开始是才是伪数组,有length属性
+        var b = {
+            // 0: "chz",
+            // 1: 23
+            1: "chz",
+            2: 23
+        };
+        console.log(b);
+        console.log(typeof b);
+        console.log(length in b);//对象没有length属性
+        console.log(1 in b);
+        console.log("age" in b);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

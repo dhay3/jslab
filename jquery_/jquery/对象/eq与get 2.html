@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+     <script src="../../jquery_scr/jquery-1.12.4.js"></script>
+         <script>
+             $(function () {
+                $("div").get(0).index=2;//会向div的dom对象添加一个index属性,jqury对象没有
+                 console.log($("div").get(0));
+                 console.log($("div"));
+             });
+         </script>
+</head>
+<body>
+<div></div>
+</body>
+</html>

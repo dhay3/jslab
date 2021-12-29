@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <!--    v-show是否展示该标签, 使用父标签的,在那个组件下就是用那个组件的变量-->
+    <cpm v-show="isShow"></cpm>
+</div>
+<template id="tem">
+    <div>
+        <h1>outgoing</h1>
+    </div>
+</template>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+  const cpm = {
+    template: '#tem',
+    data() {
+      return {
+        isShow: false
+      }
+    }
+  }
+  new Vue({
+    el: '#app',
+    data: {
+      isShow: true
+    },
+    components: {
+      cpm
+    }
+  });
+</script>
+</html>

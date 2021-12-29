@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <!--    推荐使用mustache, 会拼接内容-->
+    <h2>{{message}}, 你好世界</h2>
+    <!--    v-once只会渲染一次, 修改后不会生效-->
+    <h2 v-once>{{message}}</h2>
+    <!--    与thymeleaf的th:utext相似, 会解析html代码-->
+    <h2 v-html="url"></h2>
+    <!--    与thymeleaf的th:text相似, 不会解析html代码, 会覆盖html中的内容-->
+    <h2 v-text="url">hello world</h2>
+    <!--    将原内容直接输出, 不会被解析-->
+    <h2 v-pre>{{message}}</h2>
+    <!--    只有js代码加载好了之后才会解析-->
+    <h2 v-cloak>{{message}}</h2>
+</div>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      message: "hello world",
+      url: '<a href="http://www.baidu.com">http://www.baidu.com</a>'
+    }
+  });
+</script>
+</html>

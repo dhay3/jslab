@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+<mcn></mcn>
+<mcn></mcn>
+</div>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+    //类似于thymeleaf th:fragment="topbar" , th:insert="~{/commons/commons::sidebar(active='emp')}"
+  // 1.创建组件构造器对象
+  const cpm = Vue.extend({
+    //es6使用``自动换行
+    template: `
+<div>
+<h2>这是一个标题</h2>
+<p>这是content</p>
+<p>这是content</p>
+<p>这是content</p>
+<p>这是content</p>
+</div>`
+  });
+  //2. 注册组件, 通过mcn来调用组件, 全局组件, 在多个vue实例中都可以使用
+  Vue.component('mcn', cpm);
+  new Vue({
+    el: '#app',
+    data: {},
+    components:{
+      //局部组件只能在当前的vue对象实例中使用
+      //localmcn是调用组件的标签, cpm是组件
+      localmcn:cpm
+    }
+  });
+</script>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function f() {
+
+        }
+        //添加静态属性
+        f.a="jjj";
+        //添加静态方法
+        f.f1=function () {
+            console.log("11");
+            console.log(this.a);
+        };
+        console.log(f.a);
+        f.f1();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

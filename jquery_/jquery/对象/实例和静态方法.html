@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    //prototype用于给对象添加属性和实例方法
+    function people(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    //添加一个实例方法
+    people.prototype.say = function () {
+        alert("hello!");
+    };
+    //调用实例方法
+    new people().say();
+
+    //定义一个新的类
+    function student() {
+
+    }
+
+    //让student继承people
+    student.prototype = new people();
+
+    var say = student.prototype.say;
+    //重写say方法
+    student.prototype.say = function () {
+        //保留父类方法
+        say.call(this);
+        alert("hello! world!");
+    };
+    //调用say
+    new student().say();
+
+
+
+    //定义一个(伪)类,其实是一个函数,一个对象
+    function AClass() {
+        //在类中定义一个实例方法
+        m1 = function () {
+            alert("m0");
+        };
+        //静态方法不能定义在类中
+        // AClass.m2 = function () {
+        //     alert("m2");
+        // };
+    }
+
+    //定义一个实例方法(会覆盖原来的方法)prototype原型
+    AClass.prototype.m1 = function () {
+        alert("m1");
+    };
+    //定义一个静态方法
+    AClass.m2 = function () {
+        alert("m2");
+    };
+    //调用静态方法
+    AClass.m2();
+    //调用实例方法
+    new AClass().m1()
+
+
+    // AClass.staticMethod =function () {
+    //     alert("h");
+    // };
+    // AClass.staticMethod();
+
+    // AClass.prototype.m2 = function () {
+    //     alert("ttt");
+    // };
+    // new AClass().m2();
+
+</script>
+<body>
+
+</body>
+</html>

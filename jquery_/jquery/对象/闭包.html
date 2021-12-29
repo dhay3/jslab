@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function add() {
+            var num = 0;
+            var fn2 = function() {
+                num++;
+                console.log(num)
+            };
+            return fn2;
+        }
+        num=10;//只有在执行函数才会调用局部变量,外部的同名变量无效
+        var fn=add();
+        console.log(fn);
+        // document.write(fn);
+        //调用fn2,add的局部变量不被回收
+        fn();//1
+        fn();//2
+
+    </script>
+</head>
+
+<body>
+
+</body>
+</html>

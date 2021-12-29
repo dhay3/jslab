@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .d1 {
+            width: 100px;
+            height: 100px;
+            background: #ff4400;
+        }
+
+        .d2 {
+            width: 40px;
+            height: 40px;
+            background: #ff3;
+        }
+    </style>
+    <script src="../../jquery_scr/jquery-1.12.4.js"></script>
+    <script>
+        $(function () {
+            function f() {
+
+            }
+            f.f1=function () {
+                console.log(this)//静态方法的this指的还是对象本身与java不一样
+            };
+            f.f1();
+        });
+    </script>
+</head>
+<body>
+<div class="d1">
+    <div class="d2">123</div>
+</div>
+</body>
+</html>

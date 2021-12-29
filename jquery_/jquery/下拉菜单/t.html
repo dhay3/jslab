@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+   ul{
+       /*height: 200px;*/
+       width: 400px;
+       margin: 100px auto;
+   }
+    li{
+        height: 200px;
+        width: 100px;
+        list-style: none;
+        float: left;
+        line-height: 200px;
+        font-weight: bold;
+        text-align: center;
+        /*padding: 10px;*/
+        background-color: red;
+
+    }
+    li:hover{
+        background-color: green;
+    }
+    div{
+        height: 100px;
+        width: 100px;
+        background-color: blue;
+        display: none;
+    }
+</style>
+ <script src="../../jquery_scr/jquery-1.12.4.js"></script>
+     <script>
+         $(function () {
+                $("ul>li").mouseenter(function () {
+                    $(this).children("div").stop();
+                    $(this).children("div").slideDown(1000);
+                });
+             $("ul>li").mouseout(function () {
+                 $(this).children("div").stop();
+                 $(this).children("div").slideUp(400);
+             });
+         });
+     </script>
+<body>
+
+    <ul>
+        <li>这是一个li <div></div></li>
+        <li>这是一个li <div></div></li>
+        <li>这是一个li <div></div></li>
+        <li>这是一个li <div></div></li>
+    </ul>
+
+</body>
+</html>

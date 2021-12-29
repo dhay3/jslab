@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //如果返回的基本类型数据,忽略return
+        function Person(name) {
+            this.name = name;
+            console.log(name);
+            return 12306;
+        }
+        let p = new Person('Tom');//前提是new
+        console.log(p);
+
+
+        //如果是引用类型返回指定的引用类型
+        // let obj = {age: 26};
+        // function Person(name) {
+        //     this.name = name;
+        //     return obj
+        // }
+        // let p = new Person('Tom');
+        // console.log(p);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

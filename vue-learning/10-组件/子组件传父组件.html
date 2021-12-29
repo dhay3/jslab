@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--父组件模板-->
+<div id="app">
+<!--    监听子模块发射的事件, 绑定fathermethod-->
+    <cpm @item-click="fathermethod"></cpm>
+</div>
+</body>
+<!--子组件模板-->
+<template id="cpm">
+    <div>
+        <p>hello world</p>
+        <ul>
+            <li @click="itemClick(item)" v-for="(item,index) in categories">{{item}}</li>
+        </ul>
+    </div>
+</template>
+<script src="../js/vue.js"></script>
+<script>
+  //子组件
+  const cpm = {
+    template: '#cpm',
+    // 子组件的data属性必须是函数, 不能是对象
+    // data:{
+    data() {
+      return {
+        categories: [
+          {id: '1', name: '手机数码'},
+          {id: '2', name: '电脑'},
+          {id: '3', name: '电视'},
+          {id: '4', name: '相机'},
+        ]
+      }
+    },
+    methods: {
+      itemClick(item) {
+        // console.log(item);
+        //通过自定义事件将产生的数据传给父组件, 必须使用$emit,第一个参数是自定义是按, 第二个参数是传到父组件的数据
+        this.$emit('item-click',item);
+        //发射的事件不能使用驼峰命名
+        // this.$emit('item-click');
+      }
+    }
+  }
+  //根组件
+  new Vue({
+    el: '#app',
+    data: {},
+    components: {
+      cpm
+    },
+    methods:{
+      fathermethod(item){
+        console.log('click')
+        console.log(item)
+      }
+    }
+  });
+</script>
+</html>

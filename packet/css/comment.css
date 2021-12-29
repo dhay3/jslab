@@ -1,0 +1,165 @@
+/*评论区*/
+#commentform_title, .feedback_area_title {
+    font: normal normal 16px/35px "Microsoft YaHei";
+    margin: 10px 0 30px;
+    border-bottom: 2px solid #ccc;
+    background-image: none;
+    padding: 0;
+    border-bottom: 0;
+}
+
+#commentform_title:after, .feedback_area_title:after {
+    content: '';
+    display: block;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    bottom: 16px;
+    left: 110px;
+    border-bottom: 1px dashed #e9e9e9;
+}
+
+#tbCommentAuthor {
+    padding-left: 10px;
+    color: #555;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    width: 320px;
+    height: 20px;
+    background: #fff;
+}
+
+.commentbox_title {
+    width: 100%;
+}
+
+div.commentform p {
+    margin-bottom: 20px
+}
+
+textarea#tbCommentBody {
+    width: calc(100% - 20px);
+    border-radius: 10px;
+    outline: 0;
+    padding: 10px;
+    height: 200px;
+    position: relative;
+    background: black;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+    resize: vertical;
+}
+
+/*评论列表*/
+.feedbackItem {
+    margin-top: 30px;
+}
+
+.feedbackListSubtitle {
+    clear: both;
+    color: #a8a8a8;
+    padding: 8px 5px;
+}
+
+.feedbackManage {
+    width: 200px;
+    text-align: right;
+    float: right;
+}
+
+.feedbackListSubtitle a:link, .feedbackListSubtitle a:visited, .feedbackListSubtitle a:active {
+    color: #777;
+    font-weight: 450;
+}
+
+
+
+.feedbackCon {
+    border-bottom: 1px solid #EEE;
+    padding: 10px 20px 10px 5px;
+    min-height: 35px;
+    _height: 35px;
+    margin-bottom: 1em;
+    line-height: 1.5;
+}
+
+.comment-avatar {
+    width: 48px;
+    height: 48px;
+    border: 1px solid #dcd6b3;
+    padding: 3px;
+    border-radius: 50%;
+    -webkit-transition: all .6s ease-out;
+    -moz-transition: all .5s ease-out;
+    -ms-transition: all .5s ease-out;
+    -o-transition: all .5s ease-out;
+    transition: all .5s ease-out;
+}
+
+.blog_comment_body {
+    display: inline-block;
+    width: 70%;
+    margin-left: 15px;
+    vertical-align: initial !important;
+    font-family: Lato, Helvetica, Arial, sans-serif;
+}
+
+.comment_vote {
+    padding-right: 10px;
+}
+
+.comment_vote a {
+    color: #999;
+}
+
+.blog_comment_body a {
+    color: #2daebf;
+}
+
+.comment-avatar:hover {
+    transform: rotateZ(360deg);
+}
+
+#comment_nav {
+    padding-top: 10px;
+}
+
+.blog_comment_body img {
+    max-width: 100px;
+}
+
+/*提交评论*/
+.comment_btn {
+    width: 180px;
+    height: 38px;
+    padding: 8px 20px;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+    border: 0;
+    background: #7396a7 !important;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -webkit-transition: all .4s ease;
+    -moz-transition: all .4s ease;
+    -o-transition: all .4s ease;
+    -ms-transition: all .4s ease;
+    transition: all .4s ease;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    outline: 0;
+    text-decoration: none;
+}
+
+.comment_btn:hover {
+    background: #8cb7cc !important;
+}
+
+p#commentbox_opt {
+    text-align: center;
+}

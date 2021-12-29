@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function () {
+            var htmlParagraphElement = document.createElement("p");
+            var text = document.createTextNode("123");
+            htmlParagraphElement.appendChild(text);//create出来的元素要通过createTextNode添加值
+            document.body.appendChild(htmlParagraphElement);
+            // document.getElementsByTagName("div")[0].innerHTML=2;
+        };
+    </script>
+</head>
+<body>
+<div></div>
+</body>
+</html>

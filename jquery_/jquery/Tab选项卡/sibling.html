@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+     <script src="../../jquery_scr/jquery-1.12.4.js"></script>
+         <script>
+             $(function () {
+                 //这表示先找到li的所有对象,然后找类名为a的li
+                 // var siblings = $("li").siblings(".a");
+                 // console.log(siblings);
+
+                 //获取当前标签(选中的标签必须是单个的)的所有同辈(属于同一父辈)标签(除自己以外的标签)
+                 var siblings1 = $(".a").siblings();
+                 console.log(siblings1);
+             });
+         </script>
+</head>
+<body>
+<ul>
+    <li>li1</li>
+    <li>li2</li>
+    <li class="a">li3</li>
+    <li>li4</li>
+</ul>
+</body>
+</html>

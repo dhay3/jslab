@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //私有的自能在类内部访问，公有可以在外部访问
+        function B(){
+            this.age = 10; //公开属性，类中引用公有属性时必须带this
+            var sex = '男'; //私有属性
+            this.say = function(){//公开方法
+                console.log('我是' + sex + '的');
+                // console.log('年龄' + age + '岁');//age
+            };
+            function hi() {//私有方法
+                console.log(this.age);
+            }
+        }
+        var b = new B();
+        console.log(b.age); //结果：10
+        console.log(b.sex); //结果：undefined
+        b.say();
+        b.hi();
+        A.max();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

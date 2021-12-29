@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #box {
+            /*如果要给块级元素设置margin-top或是margin-bottom要设置宽度*/
+            /*如果要给块级元素设置margin-left或是margin-right要设置高度*/
+            width: 270px;
+            height: 455px;
+            border: 1px black solid;
+            margin: 50px auto;
+            display: block;
+        }
+
+        #u1 > li {
+            list-style: none;
+            /*让li左浮即横置*/
+            float: left;
+            padding: 15px;
+            color: #f40;
+            font-weight: bold;
+            text-align: center;
+            line-height: 25px;
+        }
+
+        /*#u1 > li:hover {*/
+        /*    !*border-radius: 20px;*!*/
+        /*    background: #f44;*/
+        /*    color: #fff;*/
+        /*    box-shadow: 2px 2px 3px blue;*/
+
+        /*}*/
+
+        #u2 > li {
+            list-style: none;
+            display: none;
+        }
+
+        #u2 > .show2 {
+            display: block;
+        }
+
+        #u1 > .show1 {
+            background: #f44;
+            color: #fff;
+            box-shadow: 2px 2px 3px blue;
+        }
+
+        img {
+            width: 270px;
+            height: 400px;
+        }
+
+    </style>
+    <script src="../../jquery_scr/jquery-1.12.4.js"></script>
+    <script>
+        $(function () {
+            $("#u1>li").mouseenter(function () {
+                //选项卡
+                $(this).addClass("show1");
+                $(this).siblings().removeClass("show1");
+                //图片
+                var index = $(this).index();
+                var li = $("#u2>li").eq(index);
+                li.addClass("show2");
+                li.siblings().removeClass("show2");
+            });
+        });
+
+    </script>
+</head>
+<body>
+<div id="box">
+    <ul id="u1">
+        <li class="show1">手机</li>
+        <li>电脑</li>
+        <li>平板</li>
+        <li>电饭锅</li>
+    </ul>
+    <ul id="u2">
+        <li class="show2"><img src="../电影排行/p2567198874.jpg"/></li>
+        <li><img src="../电影排行/p2568902055.jpg"/></li>
+        <li><img src="../电影排行/p2576088318.jpg"/></li>
+        <li><img src="../电影排行/p2574172427.jpg"/></li>
+    </ul>
+</div>
+</body>
+</html>

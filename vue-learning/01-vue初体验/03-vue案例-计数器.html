@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <h1>当前计数:{{count}}</h1>
+    <!--    v-on 后面跟事件-->
+    <!--    这里的count就是data中的count-->
+    <!--    <button v-on:click="count++">+</button>-->
+    <!--    @click就是v-on:click简写-->
+    <!--    <button @click="count--">-</button>-->
+
+
+    <button @click="increment">+</button>
+    <button @click="decrement">-</button>
+</div>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+  //可以理解为匿名类
+  new Vue({
+    el: '#app',
+    data: {
+      count: 0
+    },
+    methods: {
+      // es6语法,可以省略function
+      //相当于 increment : function(){}
+      increment() {
+        //如果调用组件中的属性需要加this
+        this.count++;
+        console.log("increment")
+      },
+      decrement() {
+        this.count--;
+        console.log("decrement")
+      }
+    }
+  });
+</script>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加节点</title>
+    <script src="../../../jquery_scr/jquery-1.12.4.js"></script>
+    <script>
+        /*
+          在元素末尾增加append能加一个函数,appendTo不能
+         append(content|fn)与原生js的appendChild()相似
+         appendTo(content)
+         在元素开头增加
+         prepend(content|fn)
+         prependTo(content)
+
+
+         */
+        $(function () {
+            var p = "<p>这是一个段落</p>";
+            $("button").eq(0).click(function () {
+
+                //在末尾添加节点,或是一个函数二选一,同理其他
+                $("ul").append("<li>我是新的末尾li</li>\n");
+            });
+            $("button").eq(1).click(function () {
+                //在开头添加节点
+                $("ul").prepend("<li>我是新的开头li</li>\n");
+            });
+            $("button").eq(2).click(function () {
+                //删除节点
+                $("li").eq(0).remove();
+            });
+            $("button").eq(3).click(function () {
+                //在指定元素后增加节点
+                // $("ul").after("<font color='red'>这是一个font1<font>");
+                //在指定元素前增加节点
+                $("ul").before("<font color='red'>这是一个font2<font>");
+            });
+            $("button").eq(4).click(function () {
+                //指定对象插入到指定元素之后
+                // $(p).insertAfter($("#l1"));
+                //指定对象插入到指定元素之前
+                $(p).insertBefore($("#l1"));
+            });
+        });
+    </script>
+</head>
+<body>
+<button>添加末尾节点</button>
+<button>添加开头节点</button>
+<button>删除节点</button>
+<button>添加外部节点</button>
+<button>插入节点</button>
+<ul>
+    <li>我是第1个li</li>
+    <li id="l1">我是第2个li,带id</li>
+    <li>我是第3个li</li>
+</ul>
+<div>这是一个div</div>
+</body>
+</html>

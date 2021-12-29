@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <cpm></cpm>
+    <cpm>
+        <!--目的是获取子组件的数据-->
+        <!--        为slot-scope取一个名字, 可以通过该别名拿到slot中的值-->
+        <div slot-scope="slot">
+            <!--            拿到slot域中的data属性-->
+            <div v-for="item in slot.data">{{item}} java 天下第一</div>
+        </div>
+    </cpm>
+</div>
+<template id="tem">
+    <div>
+        <!--        如果没有往组件中写入标签, 将使用默认标签-->
+        <!--        将language绑定到data属性上-->
+        <slot :data="languages">
+            <ul>
+                <li v-for="item in languages">{{item}}</li>
+            </ul>
+        </slot>
+    </div>
+</template>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+  const cpm = {
+    template: '#tem',
+    // props: {
+    //   data: ''
+    // },
+    data() {
+      return {
+        languages: ['C', 'C++', 'Java', 'JavaScript']
+      }
+    }
+  }
+  new Vue({
+    el: '#app',
+    data: {},
+    components: {
+      cpm
+    }
+  });
+</script>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../jquery_scr/jquery-1.12.4.js"></script>
+    <script>
+
+        var arr = [1, 23, 344, 323, 1, 32];
+        //创建一个伪数组有0到length-1的索引,有length属性
+        var obj = {
+            0: "hi",
+            1: "hello",
+            2: "hey",
+            3: "how are u",
+            // length: 4
+        };
+        console.log(obj.length);
+        //value是元素,index是索引,array是元素所在的数组
+        // arr.map(function (value, index, array) {
+        //     console.log(value,index,array);
+        // });
+
+        //和原生的foreach一样不能遍历伪数组
+        // obj.map(function (value, index, array) {
+        //     console.log(value,index,array);
+        // });
+
+        //jquery map方法与each方法差不多,map value再前,index在后
+        // $.map(arr,function (value, index) {
+        //     console.log(value,index);
+        // });
+
+        //默认返回一个空数组(支持对遍历的数组进行处理并返回一个新的数组)
+        // var a = $.map(obj, function (value, index) {
+        //     console.log(value, index);
+        //     return value+index;
+        // });
+        //默认返回的遍历的数组或对象(不支持返回一个新数组)
+        var b = $.each(obj, function (index, value) {
+            console.log(index, value);
+        });
+
+        // console.log("a",a);
+        // console.log("b",b);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

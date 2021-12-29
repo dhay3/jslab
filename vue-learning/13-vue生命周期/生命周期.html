@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <div>{{msg}}</div>
+</div>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      msg: 'hello world'
+    },
+    //在页面渲染之前调用
+    created() {
+      //相当于java的断点
+      debugger
+      alert("created");
+    },
+    //在页面渲染之后调用
+    mounted() {
+      debugger
+      alert("mounted");
+    }
+  });
+</script>
+</html>
+</body>
+</html>

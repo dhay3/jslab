@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .d1 {
+            width: 100px;
+            height: 100px;
+            background: #ff4;
+        }
+
+        .d2 {
+            width: 200px;
+            height: 100px;
+            background: #ff4400;
+        }
+    </style>
+    <script src="../../jquery_scr/jquery-1.12.4.js"></script>
+    <script>
+        window.onload = function () {
+            var d1 = document.getElementsByClassName("d1")[0];
+            console.log(d1);
+            console.log(d1.style);
+            console.log(d1.style.background);//空
+            console.log(d1.style.border);//获取d1的style属性中的值,即行间样式和内联样式
+            d1.style.width= "200px";//style可以设置 d1.style["width"]="200px"也行,注意两者一个是字符串一个是属性
+            //火狐浏览器不能显示复合属性(如background包括background-color,background-size等),谷歌可以
+            console.log(window.getComputedStyle(d1).backgroundColor);
+        };
+        $(function () {
+            // console.log($(".d1"));
+        })
+    </script>
+</head>
+<body>
+<div class="d1" style="border: 1px solid #000;"></div>
+<div class="d2"></div>
+</body>
+</html>

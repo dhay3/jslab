@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <h2 v-if="score>100">{{msg}}</h2>
+    <h2 v-else>hello vue</h2>
+</div>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+          msg: 'hello world',
+          score: 90
+        }
+    });
+</script>
+</html>

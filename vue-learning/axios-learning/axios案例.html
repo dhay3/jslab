@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <div v-for="item in items">{{item.name}},{{item.age}}</div>
+</div>
+</body>
+<script src="../js/vue.js"></script>
+<!--导入axios-->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      //变量用于接收数据
+      items: []
+    },
+    created() {
+        //在页面渲染之前调用方法
+        this.getList();
+    },
+    methods: {
+      getList() {
+        //axios发送ajax
+        //axios.提交方式
+        axios.get("./data.json")
+            //当请求成功执行then, response表示得到接口返回内容
+            // .then(function (response) {
+            //   console.log(response);
+            // })
+            //当请求失败执行catch
+            // .catch();
+
+
+            //可以直接使用es6表达方式
+            .then(response => {
+              //所有的自定义数据都在response中的data
+              console.log(response.data.data.users);
+              // console.log(response);
+
+              //直接将数据赋值给空的数组
+              this.items = response.data.data.users;
+            })
+            .catch(error => {
+              console.log(error);
+            })
+      }
+    }
+  });
+</script>
+</html>
+</body>
+</html>

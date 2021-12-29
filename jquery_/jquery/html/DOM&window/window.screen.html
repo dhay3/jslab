@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    window.onload = function () {
+        var availHeight = screen.availHeight;
+        var availWidth = screen.availWidth;
+        var clientWidth = document.documentElement.clientWidth;
+        var clientHeight = document.documentElement.clientHeight;
+        var offsetHeight = document.documentElement.offsetHeight;
+        var offsetWidth = document.documentElement.offsetWidth;
+        var height = screen.height;
+        var width = screen.width;
+        document.write(offsetHeight + ":" + offsetWidth + "<br>");
+        document.write(clientHeight + ":" + clientWidth + "<br>");
+        //不包任务栏
+        document.write("可用高度:" + availHeight + "  可用宽度:" + availWidth + "<br>");
+        document.write("高度:" + height + "   宽度:" + width);
+    }
+</script>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <!--    将父组件的movies值绑定到子组件的childmovies属性尚-->
+    <!--    <cpm :childmovies="movies" :childmsg="msg"></cpm>-->
+    <!--    使用默认值-->
+    <!--    <cpm :childmovies="movies"></cpm>-->
+
+
+<!--    如果这里使用驼峰命名规则要使用- 来分隔-->
+    <cpm :childmsg="msg"></cpm>
+</div>
+</body>
+<template id="tem">
+    <!--    必需放在div中-->
+    <div>
+        <h2 v-for="item in childmovies">{{item}}</h2>
+        <h1>{{childmsg}}</h1>
+    </div>
+</template>
+
+<script src="../js/vue.js"></script>
+<script>
+  //父传子props
+  const cpm = {
+    template: '#tem',
+    //必须要使用小写, 使用驼峰命名规则会报错
+    // props: ['childmovies', 'childmsg']
+    props: {
+      //类型的限制
+      //要求传进来的元素是array
+      // childmovies: Array,
+      //要求传进来的元素是string
+      // childmsg: String
+
+      //提供默认值
+      childmsg: {
+        type: String, //限制类型
+        default: '你好, 世界', //默认值
+        required: true //必须要传改值同spring
+      },
+      childmovies: {
+        type: Array,
+        //类型是对象或者是数组时, 默认值必须是一个函数
+        default() {
+          return [];
+        }
+      }
+    }
+  };
+  //vue对象就是一个根组件
+  new Vue({
+    el: '#app',
+    data: {
+      msg: 'hello world',
+      movies: ['a', 'b', 'c']
+    },
+    //子组件,子组件不能直接使用父组件的属性
+    components: {
+      //es6 对象增强写法
+      cpm
+    }
+  });
+</script>
+</html>

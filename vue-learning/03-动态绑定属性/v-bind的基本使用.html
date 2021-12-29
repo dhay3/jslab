@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .active {
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+<div id="app">
+    <!--    v-bind动态绑定, 和thymeleaf th:相似-->
+    <img v-bind:src="imageUrl" alt="">
+    <a v-bind:href="url">百度</a>
+    <!--    简写 v-bind-->
+    <a :href="url">百度</a>
+    <!--    class同样可以通过v-bind动态绑定-->
+    <h2 :class="active">hello</h2>
+    <h2 :class="active">hello</h2>
+</div>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      imageUrl: 'https://img.alicdn.com/tfs/TB1FKeWGND1gK0jSZFKXXcJrVXa-520-280.jpg_q90_.webp',
+      url: 'http://www.baidu.com',
+      active: 'active'
+    }
+  });
+</script>
+</html>

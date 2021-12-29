@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="效果.css">
+    <script src="../jquery_scr/jquery-1.12.4.js"></script>
+    <!--    导入的js文件要在jq导入后-->
+    <script src="动态文件.js"></script>
+    <!--    禁止右键及选中文本-->
+    <script>
+        document.oncontextmenu = new Function("event.returnValue=false;");
+        document.onselectstart = new Function("event.returnValue=false;");
+    </script>
+</head>
+<!--  style="-webkit-user-select:none;"禁止选中文字, -->
+<body>
+<div id="con">
+    <!--    h标签内不能嵌套h标签-->
+    <h1 id="h1">分数:
+        <div id="score">0</div>
+    </h1>
+    <h1 id="h2">时间:
+        <div id="time">60</div>
+    </h1>
+    <div class="m">
+        <!--        <img src="source/mice.jpg" alt="" width="50" height="50">-->
+        <!--        <img src="source/mice.jpg" alt="" width="50" height="50">-->
+        <!--        <img src="source/mice.jpg" alt="" width="50" height="50">-->
+    </div>
+    <button id="start">开始游戏</button>
+    <div id="rule">游戏规则</div>
+    <!--    游戏规则界面-->
+    <div id="rules">
+        <p>打中地鼠加+10</p>
+        <p>打中炸弹-10</p>
+        <p>游戏时间120s</p>
+        <a href="#" id="close">关闭</a>
+    </div>
+    <!--    游戏结束界面-->
+    <div id="end">
+        <p><font face="华文彩云">Game Over</font></p>
+        <button id="restart">重新开始</button>
+    </div>
+</div>
+</body>
+</html>

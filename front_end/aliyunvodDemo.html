@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="IE=edge" >
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
+  <title>Aliplayer Online Settings</title>
+  <link rel="stylesheet" href="https://g.alicdn.com/de/prismplayer/2.8.8/skins/default/aliplayer-min.css" />
+  <script type="text/javascript" charset="utf-8" src="https://g.alicdn.com/de/prismplayer/2.8.8/aliplayer-min.js"></script>
+</head>
+<body>
+<div class="prism-player" id="player-con"></div>
+<script>
+  var player = new Aliplayer({
+      "id": "video-con",
+      "vid": "cc3523f8d9e345d5bc709e8b6e31e765",
+      "playauth": "eyJTZWN1cml0eVRva2VuIjoiQ0FJUzN3SjFxNkZ0NUIyeWZTaklyNWJkSXR2bGd1bHB3YmFiTTB1RDFUbGthUDErclBIemhUejJJSGhKZVhOdkJPMGV0ZjQrbVdCWTdQY1lsck1xRk04YUdSS2FNcEF0djg0TXFGdjRKcExGc3QySjZyOEpqc1ZFK3FoejJsaXBzdlhKYXNEVkVma3VFNVhFTWlJNS8wMGU2TC8rY2lyWVhEN0JHSmFWaUpsaFE4MEtWdzJqRjFSdkQ4dFhJUTBRazYxOUszemRaOW1nTGlidWkzdnhDa1J2MkhCaWptOHR4cW1qL015UTV4MzFpMXYweStCM3dZSHRPY3FjYThCOU1ZMVdUc3Uxdm9oemFyR1Q2Q3BaK2psTStxQVU2cWxZNG1YcnM5cUhFa0ZOd0JpWFNaMjJsT2RpTndoa2ZLTTNOcmRacGZ6bjc1MUN0L2ZVaXA3OHhtUW1YNGdYY1Z5R0dOLzZuNU9aUXJ6emI0WmhKZWVsQVJtWGpJRFRiS3VTbWhnL2ZIY1dPRGxOZjljY01YSnFBWFF1TUdxQ2QvTDlwdzJYT2x6NUd2WFZnUHRuaTRBSjVsSHA3TWVNR1YrRGVMeVF5aDBFSWFVN2EwNDQvNWVUWWFwazFNVWFnQUVGS2c2SzBGSkNyVTlnT0FHaW02OGJmZmxiaU42UFlPRVUvUjJ2Qk1lVEdXYlRFcWZzT2lPMGEyR2ZkMENpR0s0N0JjelNmOWlqZUlXamNFK3I2R0JlbXExTTZEUE9BY0g1SW53VVF5WDVWa2FWakZ2cnlRTGpjMWwweVE3cFRLbEkzZ0NIYTNyTU41OHF0cVFDOEFrejBIWGQ1RmVwb3FoRHlnQ1RObUVWZVE9PSIsIkF1dGhJbmZvIjoie1wiQ0lcIjpcIkx6enROaEIvN0wybUF6blNxWmErdHZWQVlpbWRsb004MExYZEZsZ0FiTURJOE5CYk80MXF1cnpWZWlDLzRuc1pcXHJcXG5cIixcIkNhbGxlclwiOlwib29JYXpqbE9SbHFGMEcyZUIwcHBXTlAwNTdlU1JPcVIybVBPcEcrTWs4OD1cXHJcXG5cIixcIkV4cGlyZVRpbWVcIjpcIjIwMjAtMDctMjdUMTU6MTc6MzlaXCIsXCJNZWRpYUlkXCI6XCJjYzM1MjNmOGQ5ZTM0NWQ1YmM3MDllOGI2ZTMxZTc2NVwiLFwiU2lnbmF0dXJlXCI6XCJqRGszeFNFRUFzdmtOM2xUK0lnYTErQUtGMmM9XCJ9IiwiVmlkZW9NZXRhIjp7IlN0YXR1cyI6Ik5vcm1hbCIsIlZpZGVvSWQiOiJjYzM1MjNmOGQ5ZTM0NWQ1YmM3MDllOGI2ZTMxZTc2NSIsIlRpdGxlIjoiNiAtIFdoYXQgSWYgSSBXYW50IHRvIE1vdmUgRmFzdGVyLm1wNCIsIkNvdmVyVVJMIjoiaHR0cDovL291dGluLTNmZmIzMTQzYzgxMDExZWFhNjEyMDAxNjNlMWM5NGE0Lm9zcy1jbi1zaGFuZ2hhaS5hbGl5dW5jcy5jb20vY2MzNTIzZjhkOWUzNDVkNWJjNzA5ZThiNmUzMWU3NjUvc25hcHNob3RzL2M5YWJjMGJjMDk5YTQ5ODc5ZTA2ODk4YjNiMDMwNDg2LTAwMDAxLmpwZz9FeHBpcmVzPTE1OTU4NjY1NTkmT1NTQWNjZXNzS2V5SWQ9TFRBSXhTYU9mRXpDbkJPaiZTaWduYXR1cmU9dEYwSiUyRllVd3N1OCUyRk00VDBPZHkwU0JjdzJZQSUzRCIsIkR1cmF0aW9uIjoxNi4yNzY3fSwiQWNjZXNzS2V5SWQiOiJTVFMuTlVoaWFRbzZIdnRwMW0yMTkxZHJSQzRYZyIsIkFjY2Vzc0tleVNlY3JldCI6IkRSemRVeWpoZ2pwNDdobzJGTkVFcno2Ymd1WG5SSm9YeFJXaEtmOGM2alc2IiwiUmVnaW9uIjoiY24tc2hhbmdoYWkiLCJDdXN0b21lcklkIjoxNzg3NDY2NzM1OTIzMTAxfQ==",
+      "qualitySort": "asc",
+      "format": "mp4",
+      "mediaType": "video",
+      "width": "100%",
+      "height": "500px",
+      "autoplay": false,
+      "isLive": false,
+      "rePlay": false,
+      "playsinline": true,
+      "preload": false,
+      "controlBarVisibility": "hover",
+      "useH5Prism": true
+    }, function (player) {
+      console.log("The video is created");
+    }
+  );
+</script>
+</body>

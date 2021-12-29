@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #d1 {
+            height: 200px;
+            width: 200px;
+            background: red;
+            position: relative;
+        }
+
+        #d2 {
+            height: 100px;
+            width: 100px;
+            background: green;
+            position: absolute;
+            /*margin: 50px 50px ;*/
+            top: 50px;
+            left: 50px;
+        }
+    </style>
+    <script src="../../jquery_scr/jquery-1.12.4.js"></script>
+    <script>
+        $(function () {
+            // $("#d1").mouseenter(function (event) {
+            //     console.log("父类移入");
+            //     // event.stopPropagation();
+            // });
+            // $("#d1").mouseleave(function () {
+            //     console.log("父类移出");
+            // });
+            //融合了mouseenter和mouseleave方法
+            $("#d1").hover(over,out);
+        });
+
+        function over() {
+            alert("123");
+        }
+
+        function out() {
+            alert("321");
+        }
+    </script>
+</head>
+<body>
+<div id="d1">
+    <div id="d2"></div>
+</div>
+</body>
+</html>

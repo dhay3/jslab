@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--    导入bootStrap css样式-->
+    <link rel="stylesheet" href="bootStrap/css/bootstrap.css">
+<!--    bootstrap依赖jquery-->
+    <script src="bootStrap/js/jquery-1.12.4.min.js"></script>
+    <script src="bootStrap/js/bootstrap.min.js"></script>
+    <style>
+        .container-fluid {
+            background: red;
+        }
+
+        .container {
+            background: green;
+        }
+        div[class|=col]{
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    container-fluid流体容器
+<div class="container-fluid">
+    test1
+</div>
+container 固定容器
+<div class="container">
+    test2
+</div>
+栅格选择器,默认一行12列
+<div class="container">
+<!--    行-->
+    <div class="row">
+<!--        列-->
+        <div  class="col-lg-8">col-lg-8</div>
+        <div  class="col-lg-2">col-lg-2</div>
+    </div>
+    <div class="row">
+        <!--        列-->
+        <div  class="col-lg-2">col-lg-8</div>
+        <div  class="col-lg-6">col-lg-6</div>
+        <div  class="col-lg-4">col-lg-4</div>
+    </div>
+</div>
+</body>
+</html>

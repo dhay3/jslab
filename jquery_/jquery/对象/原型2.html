@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../jquery_scr/jquery-1.12.4.js"></script>
+    <script>
+        $(function () {
+            function A() {
+                // console.log("构造器")
+            }
+            //相当于给所有是A new出来的类添加以下属性，相当于根类
+            //对象中的所有属性和方法都是公有的
+            A.prototype = {
+                constructor:A,
+                num:1,
+                init: function () {
+                    this.a = this.num;
+                    console.log("方法a");
+                },
+                // init1: function () {
+                    // this.a = a;
+                    // console.log("方法b");
+                    // return 1;
+                // }
+                say:function () {
+                    console.log("say");
+                }
+            };
+            // function B() {
+            //     console.log("b");
+            // }
+            var b = new A();//这里的构造器是空的所以看不见
+            // console.log(b.init1());//先调用以遍init1（）,没有返回值输出undefined，有返回值输出返回值
+            // console.log(b.num);
+            console.log(b.a);//a不是b的属性
+
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

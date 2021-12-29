@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>删除节点</title>
+    <script src="../../../jquery_scr/jquery-1.12.4.js"></script>
+    <script>
+        /*
+        empty()与原生js的.remove()相似
+        remove([expr]),detach([expr])效果一样
+        */
+        $(function () {
+            $("button").click(function () {
+                //删除指定元素,
+                // $("li").remove();
+
+                //删除remove中匹配的元素
+                // $("li").remove(".item");
+
+                //清空div中所有内容,div不会删除
+                // $("div").empty();
+
+            });
+        });
+    </script>
+</head>
+<body>
+<!--ul>li{我是第$个li}*5  $会自增-->
+<button>删除节点</button>
+<ul>
+    <li class="item">我是第1个li</li>
+    <li>我是第2个li</li>
+    <li class="item">我是第3个li</li>
+    <li>我是第4个li</li>
+    <li class="item">我是第5个li</li>
+</ul>
+<div>
+    <p>我是一个段落</p>
+</div>
+</body>
+</html>

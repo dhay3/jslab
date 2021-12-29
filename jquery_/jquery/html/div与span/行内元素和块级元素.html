@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>行内元素和块级元素</title>
+    <!--    span是一个行内元素-->
+    <style>
+        /*float会让元素自动变成块级元素*/
+        #s {
+            /*行内元素不能设置宽度和高度
+                默认是内元素的高度和宽度
+                因为没有宽度所以margin-top,margin-bottom和padding-top,padding-bottom无效,左右margin和padding有效
+                行内元素中只能有行内元素或文本不能有块级元素,块级元素中可以有有行内元素
+                行内元素display默认inline,块级元素display默认block,两者可以互相转换
+            */
+            width: 200px;
+            height: 200px;
+            background-color: deepskyblue;
+            line-height: 40px;
+        }
+
+        div {
+            height: 50px;
+            width: 50px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<span id="s"><div>d</div>这</span>
+</body>
+</html>

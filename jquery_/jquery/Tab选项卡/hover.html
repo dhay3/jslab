@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        #u1>li{
+            list-style: none;
+            float: left;
+            padding: 15px;
+            /* 在*中设置了margin为0这里就不用设置了*/
+            /*margin: 0px;*/
+            color: deeppink;
+            font-size: 30px;
+            font-weight: bold;
+            font-style: italic;
+            line-height: 20px;
+        }
+        /*选择器的级层必须一样否则可能会出错*/
+        #u1>li:hover{
+            background-color: green;
+            color: deepskyblue;
+        }
+    </style>
+</head>
+<body>
+<div id="d1">
+    <ul id="u1">
+        <li>这是一个li</li>
+        <li>这是一个li</li>
+        <li>这是一个li</li>
+        <li>这是一个li</li>
+    </ul>
+</div>
+</body>
+</html>

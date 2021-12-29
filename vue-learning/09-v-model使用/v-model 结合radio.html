@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <!--    双向绑定时通过value来传值-->
+    <!--    双向绑定不会对checked生效-->
+    <!--    当value值与绑定的属性的值相同时就会checked-->
+    <label for="male"> <input type="radio" value="1" id="male" name="gender" v-model="gender">男</label>
+
+    <label for="male"> <input type="radio" value="0" id="female" name="gender" v-model="gender">女</label>
+    <h2>你当前性别为：{{gender}}</h2>
+
+</div>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      gender: '1'
+    }
+  });
+</script>
+</html>

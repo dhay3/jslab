@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>复制节点</title>
+    <script src="../../../jquery_scr/jquery-1.12.4.js"></script>
+    <script>
+        //clone()默认为false
+        // 浅复制只会复制元素,不会复制绑定的事件(等于只复制一个引用,不复制对象)
+        //深复制会复制元素和绑定的事件(会复制一个对象)
+        $(function () {
+            var cl = "<p>这是一个p标签</p>";
+            $("button").eq(0).click(function () {
+                //false是浅复制,克隆第一个li
+                var jQuery = $("li:first").clone(false);
+                //将复制的对象添加到ul中
+                $("ul").append(jQuery);
+                // $("li:first").clone(false).appendTo("ul");效果相同
+            });
+
+            $("button").eq(1).click(function () {
+                //true是深复制
+                var jQuery = $("li:nth-child(2)").clone(true);
+                $(jQuery).appendTo("ul");
+            });
+
+            $("li").click(function () {
+                alert($(this).html());
+            });
+        });
+
+    </script>
+</head>
+<body>
+<button>浅复制节点</button>
+<button>深复制节点</button>
+<ul>
+    <li><font color="red">这是第1几个li</font></li>
+    <li>这是第2几个li</li>
+    <li>这是第3几个li</li>
+    <li>这是第4几个li</li>
+</ul>
+</body>
+</html>

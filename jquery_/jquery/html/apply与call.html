@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+        apply和call专门用于修改方法内部的this
+        真数组专伪数组[].push.apply(obj,arr);
+        伪数组专真数组[].slice.call(obj);
+         */
+        function f() {
+            console.log(this);
+        }
+
+        obj = {"name": "chz"};
+        //将方法f内的this修改为obj对象
+        // window.f.apply(obj);//对象,[数组]
+        // window.f.call(obj);//对象,参数1,参数2,....
+
+
+        function f1(a, b) {
+            console.log(this);
+            console.log(a + b);
+        }
+
+        // window.f1.apply(obj,[2,3]);
+        // window.f1.call(obj,1,2);
+
+
+        //真数组转换为伪数组
+        a = [12, 2, 3, 234];
+        obj = {};
+        //找到[]中的push方法,push的this就是[](可以为任一数组)
+        //将push中的this改为obj,并为push传参
+        var number = a.push.apply(obj, a);//返回的还是原来方法的东西
+        console.log(obj);
+        console.log(number);
+
+        //伪数组专真数组(IE8以下浏览器无法运行)
+        // a=[];
+        obj={0:"hh",1:"hhh",length:2};
+        // [].push.apply(a,obj);
+        // console.log(a);
+
+        // 伪数组专真数组最好用slice,slice什么参数都不传返回自己本身,slice返回数组
+        a = [];
+        var ts = a.slice.call(obj);//返回的还是原来方法的东西,apply和call都一样
+        // var ts = a.slice.apply(obj);//返回的还是原来方法的东西,apply和call都一样
+        // var ts = a.slice();
+        console.log(ts);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

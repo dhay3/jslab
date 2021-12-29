@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <!--    将父组件的num1绑定到child-num-->
+    <cpm :child-num="num1"></cpm>
+</div>
+</body>
+<template id="cpm">
+    <div>
+        <h2>fdata:{{num1}}</h2>
+        <h2>cprops:{{childNum}}</h2>
+        <h2>cdata:{{dnumber1}}</h2>
+        <!--       不推荐v-model绑定到子组件的props中,因为是父子组件相互交互的属性-->
+        <!--        另外使用一个data-->
+        <input type="text" v-model="dnumber1">
+    </div>
+</template>
+<script src="../js/vue.js"></script>
+<script>
+  const cpm = {
+    template: '#cpm',
+    //通过子组件的props将父组件的data绑定到props中
+    props: {
+      childNum: {
+        type: Number,
+        default: 2
+      }
+    },
+    data() {
+      return {
+        dnumber1: this.childNum
+      }
+    }
+  }
+  new Vue({
+    el: '#app',
+    data: {
+      num1: 1
+    },
+    components: {
+      cpm
+    }
+  });
+</script>
+</html>

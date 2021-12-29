@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Music</title>
+    <!--    要先导其他的框架的css再导自己的css-->
+    <link rel="stylesheet" href="../jquery_scr/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="效果.css">
+    <!--    因为scrollbar依赖于jquery必需先导jquery再导scrollbar-->
+    <script src="../jquery_scr/jquery-1.12.4.js"></script>
+    <!--    导入自定义的scrollbar 的js文件-->
+    <script src="../jquery_scr/jquery.mCustomScrollbar.concat.min.js"></script>
+    <!--    播放键js-->
+    <script src="js/player.js"></script>
+    <!--    进度条js-->
+    <script src="js/progress.js"></script>
+    <script src="js/lyric.js"></script>
+    <!--    最后导入自己的js文件-->
+    <script src="js/index.js"></script>
+</head>
+<body>
+<!--头部-->
+<div id="header">
+    <h1 id="logo"><a href="javascript:;"></a></h1>
+    <!--    ul(li{这是}*2)-->
+    <!--    ul>li*2-->
+    <ul id="register">
+        <li><a href="javascript:;" class="login">登入</a></li>
+        <li><a href="javascript:;">设置</a></li>
+    </ul>
+</div>
+<!--中间块-->
+<div id="content">
+    <div id="content_in">
+        <div id="content_left">
+            <!--            上方工具栏-->
+            <div id="content_toolbar">
+                <!--                i用来保存小图标-->
+                <span><i></i>收藏</span>
+                <span><i></i>添加到</span>
+                <span><i></i>下载</span>
+                <span class="del_m"><i></i>删除</span>
+                <span class="clean_list"><i></i>清空列表</span>
+            </div>
+            <!--            指定html文件的scrollbar 可以添加class也可以在js文件中添加-->
+            <div id="content_list">
+                <ul>
+                    <!--                    一个li是一首歌-->
+                    <li class="list_title">
+                        <div class="all_check"><i></i></div>
+                        <div class="list_number"></div>
+                        <div class="list_name">歌曲</div>
+                        <div class="list_singer">歌手</div>
+                        <div class="list_time">时长</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="content_right">
+            <div class="song_info">
+                <!--                a为背景,img为前景-->
+                <a href="javascript:;" class="song_info_pic">
+                    <img src="" alt="">
+                </a>
+                <!--                <div class="song_info_name">歌曲名称:-->
+                <!--                    <a href="javascript:;">卖报歌</a>-->
+                <!--                </div>-->
+                <!--                <div class="song_info_singer">张三:-->
+                <!--                    <a href="javascript:;">卖报歌</a>-->
+                <!--                </div>-->
+                <!--                <div class="song_info_album">专辑名:-->
+                <!--                    <a href="javascript:;">童歌</a>-->
+                <!--                </div>-->
+                <table>
+                    <tr>
+                        <td class="song_info_name">歌曲名称:</td>
+                        <td><a class="song_info_name_a" href="javascript:;">卖报歌</a></td>
+                    </tr>
+                    <tr>
+                        <td class="song_info_singer">歌手:</td>
+                        <td><a class="song_info_singer_b" href="javascript:;">张三</a></td>
+                    </tr>
+                    <tr>
+                        <td class="song_info_album">专辑名:</td>
+                        <td><a class="song_info_album_c" href="javascript:;">童歌</a></td>
+                    </tr>
+                </table>
+            </div>
+            <!--            只有有overflow：auto的属性才能定义scrollbar-->
+            <div class="lyric_div mCustomScrollbar" data-mcs-theme="minimal-dark">
+                <ul class="song_lyric">
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!--播放条-->
+<div class="footer">
+    <div class="footer_in">
+        <!--        上一首-->
+        <a href="javascript:;" class="music_pre"></a>
+        <!--        播放暂停-->
+        <a href="javascript:;" class="music_play"></a>
+        <!--        下一首-->
+        <a href="javascript:;" class="music_next"></a>
+        <!--        进度条-->
+        <div class="progress_info">
+            <div class="progress_top">
+                <span class="progress_name">卖报歌/张三</span>
+                <span class="progress_time"><span id="s1">00:00</span><span id="s2">/02:18</span></span>
+            </div>
+            <!--            乳白色背景-->
+            <div class="progress_bar">
+                <!--                纯白色前景-->
+                <div class="progress_line">
+                    <!--                    进度条的点-->
+                    <div class="progress_dot"></div>
+                </div>
+            </div>
+        </div>
+        <a href="javascript:;" class="music_mode1 music_mode4"></a>
+        <a href="javascript:;" class="music_fav"></a>
+        <a href="javascript:;" class="music_down"></a>
+        <a href="javascript:;" class="music_comment"></a>
+        <div class="music_voice_info">
+            <!--            音量图标-->
+            <a href="javascript:;" class="music_voice_icon"></a>
+            <!--            歌曲音量条-->
+            <div class="music_voice_bar">
+                <div class="music_voice_line">
+                    <div class="music_voice_dot"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--背景-->
+<!--存放高斯效果的专辑图片-->
+<div class="mask_bg">
+    <div class="mask"></div>
+</div>
+<!--存放语音的标签-->
+<audio src=""></audio>
+<!--<div class="login_mask">-->
+<!--    <div class="login_table">-->
+<!--        <a href="javascript:;"></a>-->
+<!--        <form action="">-->
+<!--            <table>-->
+<!--                <tr>-->
+<!--                    <td>账号:</td>-->
+<!--                    <td colspan="2"><input type="text" name="username"></td>-->
+<!--                </tr>-->
+<!--                <tr>-->
+<!--                    <td>密码:</td>-->
+<!--                    <td colspan="2"><input type="password" name="password"></td>-->
+<!--                </tr>-->
+<!--                <tr>-->
+<!--                    <td></td>-->
+<!--                    <td><input type="submit" value="登入"></td>-->
+<!--                    <td><input type="submit" value="注册"></td>-->
+<!--                </tr>-->
+<!--            </table>-->
+<!--        </form>-->
+<!--    </div>-->
+<!--</div>-->
+</body>
+</html>

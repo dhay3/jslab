@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #d1 {
+            width: 100px;
+            height: 100px;
+            border: 1px red solid;
+            /*padding: 20px;*/
+            /*都需配合bottom,left,right,top使用*/
+            /*bottom,top,left,right表示距那一边有多少*/
+            /*如果想要设置一个子元素相对父级元素的位置,在父级元素中一定要加relative,子级元素中加absolute*/
+            /*如果没有给父类加absolute或是relative,子类默认absolute的元素是body*/
+            /*相当于浏览器窗口*/
+            /*position: fixed;*/
+            /*bottom: 100px;*/
+
+            /*相对当前位子移动*/
+            /*bottom,left,right,top相当于自己元素的边界*/
+            /*position: relative;*/
+            /*left:100px*/
+
+            /*相当于父级元素移动*/
+            /*position: absolute;*/
+            /*right: 200px;*/
+        }
+
+        #d2 {
+            border: 1px blue dashed;
+            height: 100px;
+            width: 100px;
+        }
+
+        #d3 {
+            border: 1px black dashed;
+            height: 100px;
+            width: 100px;
+        }
+
+        div {
+            float: left;
+        }
+
+    </style>
+    <script>
+        window.onload = function () {
+            // var div = document.getElementsByTagName("div")[0];
+            console.log(document.getElementsByTagName("div")[0].offsetHeight);
+            //距离左边的距离
+            console.log(document.getElementById("d3").offsetLeft);
+        }
+    </script>
+</head>
+<body>
+<div class="d1">
+    <div class="d2">
+        <img class="img" src="../瀑布流/pic/4.jpg" width="50px" height="auto">
+    </div>
+</div>
+<div id="d2">
+    <div id="d1"></div>
+</div>
+<div id="d3"></div>
+</body>
+</html>

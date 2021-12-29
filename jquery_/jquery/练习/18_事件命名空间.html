@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+    <script src="../../jquery_scr/jquery-1.12.4.js"></script>
+        <script>
+            //通过 . 来给事件命名
+            $(function () {
+                $("#d1").on("click.zs",zsm);
+                $("#d1").on("click.ls",lsm);
+                //自动触发ls的click的事件
+                $("#d1").trigger("click.ls");
+            });
+            function zsm() {
+                alert("click1")
+            }
+            function lsm() {
+                alert("click2")
+            }
+        </script>
+</head>
+<body>
+<div id="d1"></div>
+</body>
+</html>

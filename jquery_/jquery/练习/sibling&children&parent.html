@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../jquery_scr/jquery-1.12.4.js"></script>
+    <script>
+        $(function () {
+
+            //获取当前ii外的所有li
+            // $(".ii").siblings().css("list-style","none");
+
+            //获取当前ii外的所有li中不是iii的li
+            // $(".ii").siblings(".iii").css("list-style","none");
+
+            //找到ul中类名是ii的子元素
+            // $("ul").children(".ii").css("list-style","none");
+
+            //找到ul中所有的子类
+            // $("ul").children().css("list-style", "none");
+
+            //parents获取li所有的父级元素(后面的参数表示指定父级元素)
+            console.log($("li").parents("div"));
+            //parent获取li的上一层父级元素
+            console.log($("li").parent());
+        });
+    </script>
+</head>
+<body>
+<div>
+    <ul>
+        <li class="iii">li 1</li>
+        <li>li 2</li>
+        <li class="ii">li 3</li>
+        <li>li 4</li>
+        <li class="iii">li 5</li>
+    </ul>
+</div>
+</body>
+</html>

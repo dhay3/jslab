@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../jquery_scr/jquery-1.12.4.js"></script>
+    <script>
+        function clk () {
+            alert("click2");
+        }
+
+        //第一种方式eventName(fn)  推荐使用
+        $(function () {
+            $("button").click(function () {
+                alert("click1");
+                //可以同时添加多种事件,且不会覆盖
+            }).mouseleave(function () {
+                alert("mouseleave");
+            });
+
+            //第二种方式on(eventName,fn) 可以添加所有js事件
+            $("button").on("click",clk);
+
+            
+            //移除当前对象上的所有事件
+            // $("button").off();
+            //移除当前对象上的指定事件
+            // $("button").off("click");
+            //移除当前对象上指定类型的指定事件
+            $("button").off("click",clk);
+        });
+
+    </script>
+</head>
+<body>
+<button>按钮</button>
+<!--<button id="a">按钮</button>-->
+</body>
+</html>

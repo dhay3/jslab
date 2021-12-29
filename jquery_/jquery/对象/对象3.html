@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    //每一个函数都有一个prototype的属性,prototype中有constructor
+    function Person(name) {
+        this.name = name;
+    }
+    son =new Person("zs");
+    console.log(son);
+    alert(son.constructor);
+    alert(Person.prototype.constructor);
+    // Person.prototype = {
+    //     Constructor: Person,//指定构造函数,不指定默认是object的构造函数
+    //     //这是一个方法
+    //     sing: function () {
+    //         console.log("Hi ! " + name);
+    //     }
+    // };
+    // son = new Person("zs");
+    // // console.log(Person);
+    // // console.log(son);
+    // // console.log(son.sing());
+    // console.log(son.constructor);
+    // alert(son.constructor);
+    // // console.log(Person.constructor);
+    // // console.log(Person.prototype.constructor);
+    // alert(Person.prototype.constructor);
+</script>
+<body>
+
+</body>
+</html>

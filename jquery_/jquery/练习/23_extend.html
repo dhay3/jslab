@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function f() {
+
+        }
+        //定义静态方法extend
+        f.extend=function (obj) {//f.prototype.extend=f.extend=function()....
+            //for in 遍历的是键值对
+            for (var key in obj){
+                // this.key=key;
+                this[key]=obj[key];//把extend参数中的键值对,加到f中
+            }
+        };
+        //调用静态方法extend
+        f.extend({
+            test:function () {
+                console.log("111");
+            }
+        });
+        //调用f中的test键对应的方法
+        f.test();
+        console.log(f.test);
+
+        // var a = new f();
+        // a.extend({//new 出来的没有extend方法
+        //     test1:function () {
+        //         console.log("2222");
+        //     }
+        // });
+        // a.test1();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

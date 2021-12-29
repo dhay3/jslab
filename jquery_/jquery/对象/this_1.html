@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../jquery_scr/jquery-1.12.4.js"></script>
+    <script>
+        $(function () {
+            function Dog(a) {
+                return new Dog.prototype.f1(a);
+                //如果构造函数中有return返回指定对象
+            }
+
+            Dog.prototype = {
+                constructor: Dog,//构造函数时函数本身
+                f1: function (a) {
+                    this.a = a;//这里的this指的是Dog类new出来的
+                    this.b = a;
+                },
+                f2: function () {
+                    console.log(this.a);//这里的this指的是Dog类new出来的
+                    console.log(this.max);//这里的this指的是Dog类new出来的
+                },
+                max:11
+            };
+            Dog.prototype.f1.prototype = Dog.prototype;//让dog的prototype赋值与f1的prototype
+            var dog = new Dog(3);//这其实就是一个f1
+            console.log(dog.a);
+            console.log(dog.b);
+            dog.f2();
+
+
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

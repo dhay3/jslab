@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../jquery_scr/jquery-1.12.4.js"></script>
+    <script>
+       function A(a) {
+            this.b=a;
+           console.log(this.b);
+           console.log("函数的构造函数就是自己本身");
+           // return 1;
+       }
+       // var aa=new A(3);//new的时候执行一次构造函数
+       // console.log(aa);
+       // console.log(aa.b);
+
+       var aa= A(3);//这里只是返回(同时会调用一次函数)，如果没有返回值就是undefined,有返回值返回返回值
+       console.log(aa);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

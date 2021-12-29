@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+     <script src="../../jquery_scr/jquery-1.12.4.js"></script>
+         <script>
+             $(function () {
+                    $("a").click(function (event) {
+                        event.preventDefault();
+                        $("div").css("background","blue");
+                    })
+             });
+         </script>
+</head>
+<body>
+<a href="http://www.baidu.com" ondragstart="return false">aa</a>
+<div></div>
+</body>
+</html>

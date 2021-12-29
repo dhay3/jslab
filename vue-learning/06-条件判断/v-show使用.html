@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        {
+        /*display: none;*/
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <!--    v-if当条件为false根本不会存在dom中-->
+    <p v-if="isShow">hello</p>
+    <!--    当条件为false时,v-show其实加了一个样式, display:none-->
+    <p v-show="isShow">你好</p>
+    <p>世界</p>
+</div>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      isShow: false
+    }
+  });
+</script>
+</html>

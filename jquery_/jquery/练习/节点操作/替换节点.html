@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>替换节点</title>
+    <script src="../../../jquery_scr/jquery-1.12.4.js"></script>
+    <script>
+        $(function () {
+            $("button").click(function () {
+                var obj="<p>你是一个<font color=\"red\">脑残</font>?</p>\n";
+                //用指定对象替换指定的元素
+                // $("p").replaceWith(obj);
+                $(obj).replaceAll("p");//与replaceWith相同
+            });
+        });
+    </script>
+</head>
+<body>
+<button>替换节点</button>
+<p>你是一个___?</p>
+<!--<p>你是一个<font color="red">脑残</font>?</p>-->
+</body>
+</html>

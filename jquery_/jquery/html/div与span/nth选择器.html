@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div *{
+            display: block;
+            width: 20px;
+            height: 20px;
+            background: red;
+        }
+        /*表示选中子级元素是li的父级元素中的第一个元素*/
+        /*li:nth-child(1){*/
+        /*     color: yellow;*/
+        /* }*/
+        /*表示选父元素数div的第一个元素,如果选中的元素不是li不生效*/
+        div>li:nth-child(1){
+            color: yellow;
+        }
+        /*表示选中子级元素是li的父级元素中的第三元素,如果子级元素不是li不生效*/
+        li:nth-child(3){
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <ul>
+        <li>99</li>
+        <span><li>l1</li></span>
+        <div><li>l2</li></div>
+        <li>l3</li>
+        <li>l4</li>
+        <li>l5</li>
+        <li>l6</li>
+    </ul>
+    <div>
+        <p>ppoo</p>
+        <li>l7</li>
+        <li>l8</li>
+        <p>pp</p>
+        <li>l9</li>
+    </div>
+</div>
+
+</body>
+</html>

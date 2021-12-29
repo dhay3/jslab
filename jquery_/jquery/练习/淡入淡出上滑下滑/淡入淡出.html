@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            height: 100px;
+            width: 100px;
+            background-color: red;
+            display: none;
+        }
+    </style>
+    <script src="../../../jquery_scr/jquery-1.12.4.js"></script>
+    <script>
+        $(function () {
+            $("button").eq(0).click(function () {
+                console.log(this);
+                //动画完毕后执行回调函数,同理findOut
+                $("div").fadeIn(1000,function () {
+                    alert("淡入完毕");
+                });
+            });
+            $("button").eq(1).click(function () {
+                console.log(this);
+                $("div").fadeOut(1000);
+            });
+            $("button").eq(2).click(function () {
+                console.log(this);
+                $("div").fadeToggle(1000);
+            });
+            $("button").eq(3).click(function () {
+                console.log(this);
+                //淡入显示,第一个参数是时间,第二个参数是透明度
+                $("div").fadeTo(1000, 0.25, function () {
+                    alert("淡入到什么程度");
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<button>淡入</button>
+<button>淡出</button>
+<button>切换</button>
+<button>淡出到</button>
+<div></div>
+</body>
+</html>

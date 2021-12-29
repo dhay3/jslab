@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .d1 {
+            width: 100px;
+            height: 100px;
+            background: #ff4400;
+        }
+
+        .d2 {
+            width: 40px;
+            height: 40px;
+            background: #ff3;
+        }
+    </style>
+    <script src="../../jquery_scr/jquery-1.12.4.js"></script>
+    <script>
+        $(function () {
+            $(".d1").find(".d2").click(function () {
+                //这个的this指的是d2
+                console.log($(this));
+                if ($(".d1").attr("class").indexOf("d1")!=-1){
+                    //这个还是d2
+                    console.log($(this));
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="d1">
+    <div class="d2">123</div>
+</div>
+</body>
+</html>

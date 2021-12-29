@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <label v-for="item in hobbies" :for="item">
+        <!--        可以通过v-for遍历生成checkbox,然后绑定一个空数组-->
+        <!--        value不再是写死的, 而是动态绑定-->
+        <input type="checkbox" :id="item" :value="item" v-model="userHobbies">
+        {{item}}</label>
+    <h2>{{userHobbies}}</h2>
+</div>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      userHobbies: [],
+      hobbies: ['football', 'basketball', 'baseball', 'faceBowl']
+    }
+  });
+</script>
+</html>

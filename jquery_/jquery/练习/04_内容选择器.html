@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            height: 100px;
+            width: 100px;
+            background: pink;
+            margin: 10px;
+        }
+    </style>
+    <script src="../../jquery_scr/jquery-1.12.4.js"></script>
+    <script>
+        $(function () {
+            //找到没有子元素或文本内容的div
+            var $div = $("div:empty");
+            console.log($div);
+            //找有子元素或有文本内容的div
+            var $span = $("div:parent");
+            console.log($span);
+            //找到有指定子元素的div
+            var $div1 = $("div:has('span')");
+            console.log($div1);
+            //找有包含给定文本的div
+            var $div2 = $("div:contains('is')");
+            console.log($div2);
+        })
+    </script>
+</head>
+<body>
+<div id="d1"></div>
+<div id="d2"><span></span></div>
+<div id="d3">this is a div.</div>
+<div id="d4">this is a span.</div>
+
+</body>
+</html>

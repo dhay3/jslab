@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+
+    <p v-text="getFullName()"></p>
+    <p>{{getFullName()}}</p>
+    <!--    计算属性, 把函数当成属性 不需要添加小括号-->
+    <p>{{fullName}}</p>
+    <p>总价格{{totalPrice}}</p>
+</div>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      firstName: 'zhang',
+      lastName: 'san',
+      books: [
+        {id: 1, name: 'a', price: 100},
+        {id: 2, name: 'b', price: 20},
+        {id: 3, name: 'c', price: 10},
+        {id: 4, name: 'd', price: 500}
+      ]
+    },
+    // 计算属性, 将函数当成属性, 无需添加()
+    computed: {
+      //计算属性全写, 其实是一个属性, 不希望设置值, 就是一个只读属性
+      // fullName:{
+      //   get(){
+      //     return 'abc';
+      //   },
+      //   // set(){
+      //   //   //set方法为空, 直接删除即可
+      //   // }
+      // },
+
+      //计算属性简写
+      fullName() {
+        //return 对应get方法
+        return this.firstName + '   ' + this.lastName;
+      },
+
+      totalPrice(){
+        // let price = 0;
+        // //可以使用lambda
+        // this.books.forEach((a)=>price+=a.price);
+        // return price;
+        //可以使用stream api
+        return this.books.map(a=>a.price).reduce((x,y)=>x+y);
+      }
+    },
+    methods: {
+
+      getFullName() {
+        return this.firstName + '   ' + this.lastName;
+      }
+    }
+  });
+</script>
+</html>

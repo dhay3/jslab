@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <cpm></cpm>
+    <!--    如果想在子组件中使用标签要在子组件中加入slot标签-->
+    <cpm><p>123</p></cpm>
+    <cpm><i>wa ka ka </i></cpm>
+    <cpm>
+        <div>
+            <a href="">google</a>
+            <p>ni hao</p>
+        </div>
+    </cpm>
+</div>
+<template id="tem">
+    <div>
+        <h2>我是子组件</h2>
+        <p>hello world</p>
+        <!--        不同的东西使用slot插槽-->
+        <!--        如果子组件中没有使用其他的标签就会使用slot的默认标签-->
+        <slot>
+            <button>按钮</button>
+        </slot>
+    </div>
+</template>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+  const cpm = {
+    template: '#tem'
+  }
+  new Vue({
+    el: '#app',
+    data: {},
+    components: {
+      cpm
+    }
+  });
+</script>
+</html>

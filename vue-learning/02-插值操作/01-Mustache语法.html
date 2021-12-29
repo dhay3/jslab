@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+<!--    只能再元素内部使用, 类似于thymeleaf的[[...]]-->
+<!--    支持组合-->
+    <h1>{{name+'  '+age+' '+gender}}</h1>
+    <h1>{{name}} {{gender}}</h1>
+    <h1>{{count*2}}</h1>
+
+</div>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+          name: 'zs',
+          age: 23,
+          gender: '男',
+          count: 100
+        }
+    });
+</script>
+</html>

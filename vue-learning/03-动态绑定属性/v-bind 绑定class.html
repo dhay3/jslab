@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .active {
+            color: red;
+        }
+
+        .line {
+            font-size: 100px;
+        }
+
+    </style>
+</head>
+<body>
+v-bind:  == :
+v-on: == @
+<div id="app">
+    <!--    类名:boolean-->
+    <!--    当布尔值为true时就会将类应用到该标签中-->
+    <!--    将active和line应用到当前标签-->
+    <h2 :class="{active:true,line:true}">hello world</h2>
+    <!--    可以将需要绑定的类封装入一个函数中, 这里调用必须要要加()-->
+    <h2 :class="toggleC()">hello world</h2>
+    <button @click="toggleC" >button</button>
+</div>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      active: true,
+      line: true
+    },
+    methods: {
+      toggleC() {
+        return {active: this.active, line: this.line};
+      }
+    }
+  });
+</script>
+</html>

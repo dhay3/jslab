@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //window的属性和方法就是全局变量,调用时可以不用加window
+        window.onload = function () {
+            //setInterval每隔多少时间执行一次
+            interval = setInterval(f1,0);
+            setTimeout(f,10000);
+        };
+        // window.onload = f1;
+        function f() {
+            //target的参数与a标签的target参数相同
+            // window.open("http://www.baidu.com","_blank","height = 200px,width = 200px, top = 200px,tool = no");
+            window.close();
+        }
+        function f1() {
+            var date = new Date();
+            document.getElementById("d1").innerHTML = "时间是:"+date;
+        }
+        function f2() {
+            //清除setInterval的操作要setInterval返回值
+            clearInterval(interval);
+        }
+
+    </script>
+</head>
+<body>
+<div id="d1"></div>
+<button onclick="f2()">button</button>
+</body>
+</html>

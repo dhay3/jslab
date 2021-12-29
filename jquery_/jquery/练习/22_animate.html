@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义动画</title>
+    <style>
+        .one {
+            height: 100px;
+            width: 100px;
+            margin-top: 10px;
+            background-color: red;
+            position: relative;
+        }
+
+        .two {
+            height: 100px;
+            width: 100px;
+            margin-top: 10px;
+            background-color: black;
+        }
+    </style>
+    <script src="../../jquery_scr/jquery-1.12.4.js"></script>
+    <script>
+        $(function () {
+            //animate不能让元素变色
+            // $("div").animate({
+            //     background: "blue"
+            // },1000)
+            //第一个参数是要对对象的操作.第二个是时间,第三个(默认swing)是匀速执行还是变速执行,第四个是回调函数
+            $("button").eq(0).click(function () {
+                $(".one").animate({
+                    // width: 400,
+                    //如果要是对象位移要加position属性
+                    // left:50
+                    //jq中的代码margin-left没有 - 改用驼峰命名
+                    marginLeft: 500
+                    //swing变速,先块后慢
+                }, 5000, "swing", function () {
+                    // alert("自定义动画执行完毕");
+                });
+
+                //linear匀速
+                $(".two").animate({
+                    marginLeft: 500
+                }, 5000, 'linear', function () {
+
+                });
+            });
+
+            $("button").eq(1).click(function () {
+                $(".one").animate({
+                    //自增一百
+                    width: '+=100'
+                }, 1000, "linear", function () {
+
+                })
+            });
+
+            $("button").eq(2).click(function () {
+                $(".two").animate({
+                    // width: "hide"
+                    width: "toggle"
+                    // display: "none"
+                }, 1000, function () {
+
+                })
+            });
+        });
+    </script>
+</head>
+<body>
+<button>操作属性</button>
+<button>增加属性</button>
+<button>关键字</button>
+<div class="one"></div>
+<div class="two"></div>
+</body>
+</html>

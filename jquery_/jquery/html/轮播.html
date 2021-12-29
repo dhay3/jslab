@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var i =0 ;
+        window.onload = function () {
+            setInterval(f,1000);
+        };
+
+        function f() {
+                i++;
+                if (i==4){
+                    i=1;
+                }
+                document.getElementById("img").src = "pic/" + i + ".jpg";
+        }
+
+    </script>
+</head>
+<body>
+<img id="img" src="">
+</body>
+</html>

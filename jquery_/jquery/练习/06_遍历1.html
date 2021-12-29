@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../jquery_scr/jquery-1.12.4.js"></script>
+</head>
+<script>
+    //$()表示jq核心函数(获取DOM对象), $.表示jq的对象方法
+
+    var arr = [1,23,344,323,1,32];
+    //创建一个伪数组有0到length-1的索引,有length属性
+    var obj = {
+        0:"hi",
+        1:"hello",
+        2:"hey",
+        3:"how are u",
+        length:4
+    };
+    //原生的foreach遍历数组
+    // arr.forEach(callBack);
+    //原生的foreach不能遍历伪数组(对象),但是forIn可以遍历
+    // for (let objectKey in obj) {
+    //     console.log(objectKey);
+    // }
+    //a(推荐使用value)表示当前元素,b(推荐使用index)表示当前元素的索引,第三个参数arr可选
+    function callBack(a,b) {
+        console.log(a,b);
+    }
+
+    //利用jquery遍历数组或对象,与原生的foreach相反a(是索引).b(是元素)
+    // $.each(arr,callBack);
+    $.each(obj,callBack);
+</script>
+<body>
+
+</body>
+</html>

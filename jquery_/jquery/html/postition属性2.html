@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .d1{
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: relative;
+        }
+        .d2{
+            width: 100px;
+            height: 100px;
+            background: blue;
+            /*absolute只对有子父级关系的元素有效*/
+            position: absolute;
+            top: 200px;
+        }
+    </style>
+
+</head>
+<body>
+<div class="d1"><div class="d2"></div></div>
+<!--<div class="d2"></div>-->
+</body>
+</html>

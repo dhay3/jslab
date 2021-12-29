@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function f() {
+            try {
+                //在函数中不带var表示全局变量,只有在函数被调用时才会有初始值
+                 value = document.getElementById("num").value;
+                if (value == "") {
+                    //throw 一般和try...catch一起使用
+                    throw "错误"
+                }
+            } catch (e) {
+                alert(e)
+            }
+
+        }
+    </script>
+</head>
+<body>
+<input type="text" id="num">
+<button onclick="f()">go</button>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <cpm>
+        <h1>hello world</h1>
+        <!--        通过指定slot属性来替换指定的slot标签-->
+        <div slot="left">left slot has been replaced</div>
+        <button slot="center">center slot has been replaced</button>
+        <div slot="right">right slot has been replaced</div>
+    </cpm>
+</div>
+<template id="tem">
+    <div>
+        <!--        如果没有name属性插槽不会被替换-->
+        <slot name="left"><span>左边插槽</span></slot>
+        <slot name="center"><span>中间插槽</span></slot>
+        <slot name="right"><span>右边插槽</span></slot>
+        <!--        所有的空白插槽会被替换-->
+        <slot><span>空白插槽</span></slot>
+        <slot><span>空白插槽</span></slot>
+    </div>
+</template>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+  const cpm = {
+    template: '#tem'
+  }
+  new Vue({
+    el: '#app',
+    data: {},
+    components: {
+      cpm
+    }
+  });
+</script>
+</html>

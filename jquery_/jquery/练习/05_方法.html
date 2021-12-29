@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../jquery_scr/jquery-1.12.4.js"></script>
+</head>
+<script>
+
+    var s = "   str   ";
+    console.log("---" + s + "---");
+    //trim方法去除空格
+    var str = $.trim(s);
+    console.log(str);
+
+    var w = window;
+    //判断一个对象是不是window对象
+    var rs1 = $.isWindow(w);
+    var arr = [1, 23, 4, 5];
+    //判断一个对象是不是array
+    var rs2 = $.isArray(arr);
+    var f = function () {
+
+    };
+    //判断一个对象是不是函数
+    //jquery框架是一个函数
+    var rs3 = $.isFunction(jQuery);
+    console.log("rs1", rs1);
+    console.log("rs2", rs2);
+    console.log("rs3", rs3);
+
+</script>
+<body>
+
+</body>
+</html>

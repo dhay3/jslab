@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../jquery_scr/jquery-1.12.4.js"></script>
+    <script>
+        $(function () {
+            function F() {
+                var a = 10;//私有变量（对象外访问不到）
+                function b() {//私有方法（
+                    console.log(a);
+                }
+                // var a;
+                // function b() {
+                //     console.log(a);
+                // }
+                // a=10;
+            }
+            var f1 = new F();
+            console.log(f1.b);
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

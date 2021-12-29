@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background: red;
+            margin-top: 20px;
+        }
+
+        #d1 {
+            width: 100px;
+            height: 100px;
+            background: blue;
+            margin-top: 20px;
+        }
+    </style>
+    <script src="../../jquery_scr/jquery-1.12.4.js"></script>
+    <script>
+        $(function () {
+            function f() {
+                var a = 1;
+                var b = 2;
+                var c=3;
+                //给div的dom对象添加一个a属性并赋值
+                $div.get(0).index = a;
+                //div的jquery对象添加一个a属性并赋值
+                $div.aaa = b;//给集合添加一个aaa属性
+                d1.bbb=c;
+            }
+
+            var $div = $("div");
+            var d1=$("#d1");
+            f();
+            $div.click(function () {
+                console.log($div.get(0));
+                console.log($div.eq(0));
+                console.log(d1);
+                console.log($div);
+                console.log("------");
+                console.log($div.aaa);
+                console.log($div.eq(0).aaa);
+                console.log($div.get(0).index);
+                console.log(d1.bbb);
+                console.log(d1.eq(0).bbb);
+            });
+        });
+    </script>
+</head>
+<body>
+<div></div>
+<div></div>
+<div id="d1"></div>
+</body>
+</html>

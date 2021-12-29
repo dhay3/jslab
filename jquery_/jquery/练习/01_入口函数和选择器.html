@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--    可以直接将其拖入到文件中-->
+    <!--    如果jquery文件和当前的js,html文件不是位于同一目录,可以通过..先返回上一层目录(..表示返回一层)再引入jquery-->
+    <!--    不能在引入jquery的script中写js代码,第一个script表示引入文件-->
+    <script type="text/javascript" src="../../jquery_scr/jquery-1.12.4.js"></script>
+    <!--    在线引入jquery-->
+    <!--    <script src="https://code.jquery.com/jquery-1.12.4.js"-->
+    <!--            integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="-->
+    <!--            crossorigin="anonymous"></script>-->
+
+    <script>
+        //入口函数是在html文档执行完毕时执行的,不会获取新增的元素
+        // 入口函数相当于window.onload,但是jquery是在页面加载完再执行,window.onload是在页面加载之前进行的
+        //jquery的入口函数不会被覆盖,就相当于addEventListener()
+        //jquery中监听的事件不会被覆盖
+        //释放$的使用权,释放了就不能使用$或jQuery去访问
+        // jQuery.noConflict();自定义一个访问符
+        // var jq = jQuery.noConflict();
+        $(
+            function () {
+                alert("hello world");
+                //选择器返回的是一个jquery对象
+                // 相当于document.getElementsByClassName();
+                var $p1 = $(".p1")[0];
+                // var innerHTML = document.getElementsByClassName("p1").innerHTML;
+                // console.log(innerHTML);
+                console.log($p1.innerHTML);
+                console.log($p1);
+                //相当于document.getElementById();
+                var $p2 = $("#p2");
+                //id无法通过innerHTML获取中间的值   .html()只能获取第一个元素
+                //或是$("#p2")[0].innerHTML获取
+                console.log($p2.html());
+                console.log($p2);
+                // 相当于document.getElementsByTagName();
+                var $pElement = $("p")[2];
+                console.log($pElement.innerHTML);
+                console.log($pElement);
+
+                //传入一个标签返回标签
+                var $div = $("<div>see u<div>");
+                console.log($div);
+                //传入一给DOM对象
+                //返回一个包装成jquery对象
+                var sp = document.getElementById("sp");
+                var $1 = $(sp);
+                console.log($1);
+            }
+        );
+        //四种入口函数
+        //1 解决jquery冲突的方式
+        /*jq(function () {
+            alert("ddd");
+        });
+        //1
+        $(document).ready(function () {
+            // alert("aad")
+        });
+        //2推荐
+        $(function () {
+            alert("sss")
+        });
+        //3
+        jQuery(document).ready(function () {
+            alert("ttt")
+        });
+        //4
+        jQuery(function () {
+            alert("hhh");
+        });*/
+    </script>
+</head>
+<body>
+<p class="p1">hi!</p>
+<p id="p2">hey!</p>
+<p>hello!</p>
+<span id="sp">cool</span>
+</body>
+</html>

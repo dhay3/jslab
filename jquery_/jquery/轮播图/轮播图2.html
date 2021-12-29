@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 400px;
+            height: 150px;
+            margin: 100px auto;
+            background: #000;
+            overflow: hidden;
+        }
+
+        ul {
+            width: 1200px;
+            height: 150px;
+            /*background: #f30;*/
+            list-style: none;
+            /*display: none;*/
+        }
+        li{
+            float: left;
+            opacity: 0.5;
+        }
+        ul li a {
+            display: inline-block;
+            width: 200px;
+            height: 150px;
+        }
+
+        ul li:hover {
+            opacity: 1;
+        }
+
+        ul > li:nth-child(1) a {
+            /*background-position: 0 0;*/
+            background: red;
+        }
+
+        ul > li:nth-child(2) a {
+            /*background-position: 0 -40px;*/
+            background: green;
+        }
+
+        ul > li:nth-child(3) a {
+            /*background-position: 0 -50px;*/
+            background:blue;
+        }
+
+        ul > li:nth-child(4) a {
+             /*background-position: 0 -80px;*/
+             background: deeppink;
+         }
+        ul > li:nth-child(5) a {
+            /*background-position: 0 -80px;*/
+            background: red;
+        }
+        ul > li:nth-child(6) a {
+            /*background-position: 0 -80px;*/
+            background: green;
+        }
+
+    </style>
+    <script src="../../jquery_scr/jquery-1.12.4.js"></script>
+    <script>
+        $(function () {
+            var left =0;
+            // console.log(left);
+            function roll() {
+                left-=2;
+                if (left<=-800){
+                    left=0;
+                }
+                $("ul").css("marginLeft",left);
+            }
+            // setInterval(roll,1000);//每隔1秒调用一次
+            //  interval = setInterval(roll,30);
+            rollAgain();
+            function rollAgain() {
+                interval = setInterval(roll,30);
+            }
+            $("li").hover(function () {
+                clearInterval(interval);
+            },function () {
+                rollAgain();
+            })
+
+        });
+    </script>
+</head>
+<body>
+<div>
+    <ul>
+        <li><a href="javascript:;"></a></li>
+        <li><a href="javascript:;"></a></li>
+        <li><a href="javascript:;"></a></li>
+        <li><a href="javascript:;"></a></li>
+        <li><a href="javascript:;"></a></li>
+        <li><a href="javascript:;"></a></li>
+    </ul>
+</div>
+</body>
+</html>

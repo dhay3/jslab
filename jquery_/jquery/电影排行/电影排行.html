@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        /*设置容器大小并让容器居中*/
+        #box {
+            width: 300px;
+            height: 450px;
+            border: 1px black solid;
+            margin: 50px auto;
+        }
+
+        /*设置标题*/
+        h1 {
+            font-size: 20px;
+            line-height: 35px;
+            color: deeppink;
+            padding-left: 10px;
+            border-bottom: 1px #000 dashed;
+        }
+
+        /*设置列样式*/
+        li {
+            list-style: none;
+            /*position: relative;*/
+            /*left: 10px;*/
+            /*top: 5px*/
+            padding: 5px 10px;
+            border-top: 1px #000 dashed;
+            /*border-bottom: 1px #000 dashed;*/
+            /*border-right: transparent;*/
+            /*border-left: transparent;*/
+            /*width: 50px;*/
+        }
+
+        /*设置序号底框*/
+        ul > li > span {
+            /*block会有换行符*/
+            /*display: block;*/
+            display: inline-block;
+            background: #ccc;
+            width: 20px;
+            height: 20px;
+            /*设置span中的字体居中*/
+            text-align: center;
+            /*行间距*/
+            line-height: 20px;
+            margin-right: 10px;
+        }
+
+        /*标签:nth-child表示选中的标签是其父级元素中的第几个子元素
+        n默认从0开始
+        n+3表示选大于等于3的元素
+        -n+3表示选小等于3的元素
+        这里表示选中的是li,且是ul中的第(-n+3)个子元素 的span
+        */
+        li:nth-child(-n+3) span {
+            background: #f40;
+        }
+
+        .content {
+            /*当内容溢出元素框时设置overflow
+               hidden内容会被修剪,并且其余内容不可见
+               scroll多出来的部分会一滚动条的方式显示
+            */
+            overflow: hidden;
+            /*overflow: scroll;*/
+            margin-top: 5px;
+            /*将内容设置为空*/
+            display: none;
+        }
+
+        /*设置段落*/
+        .content > p {
+            line-height: 20px;
+            width: 180px;
+            height: 120px;
+            float: right;
+        }
+
+        /*设置图片*/
+        .content > img {
+            width: 80px;
+            height: 120px;
+            float: left;
+        }
+
+        /*当不存在current类时不会生效
+           注意此处空格
+        */
+        .current .content {
+            display: block;
+        }
+    </style>
+    <script src="../../jquery_scr/jquery-1.12.4.js"></script>
+    <script>
+        $(function () {
+            //监听li的移入移出事件
+            $("li").hover(over, out);
+        });
+        //this表示当前调用的li
+        //添加current类让.content .current代码生效
+        function over() {
+            $(this).addClass("current");
+        }
+
+        //移除current类只生效.content代码
+        function out() {
+            $(this).removeClass("current");
+        }
+
+    </script>
+</head>
+<body>
+<div id="box">
+    <h1>电影排行榜</h1>
+    <ul>
+        <li><span>1</span>南方车站的聚会
+            <div class="content">
+                <img src="wild%20goose%20lake.jpg" alt="" title="野鹅湖">
+                <p>南方某城市，重案队长刘队（廖凡 饰）重金悬赏在逃罪犯周泽农（胡歌 饰）。陪泳女刘爱爱（桂纶镁 饰） 、周泽农曾经的好友华华（奇道 饰）、五年未见的妻子杨淑俊（万茜
+                    饰），各色人等各怀心事，相继被卷入这场罪与罚的追击旋涡。冒险与爱情，人性与救赎，这场特别的“聚会”该如何收场？善恶有道一念之间。 </p>
+            </div>
+        </li>
+        <li><span>2</span>小丑
+            <div class="content">
+                <img src="p2567198874.jpg" alt="" title="joker">
+                <p>
+                    电影《小丑》以同名DC漫画角色为基础，由华纳兄弟影业公司发行，计划于2019年10月4日上映。本片的故事将独立于DCEU之外，故事背景设置在20世纪80年代，讲述了一位生活陷入困境的脱口秀喜剧演员渐渐走向精神的崩溃，在哥谭市开始了疯狂的犯罪生涯，最终成为了蝙蝠侠的宿敌“小丑”的故事。
+                    　　本片由《宿醉》的导演托德菲利普斯执导，他与编剧斯科特西尔弗一起撰写了编剧。杰昆菲尼克斯本片中饰演主人公“小丑”，其他的主演包括罗伯特德尼罗、莎姬贝兹、马克马龙等。</p>
+            </div>
+        </li>
+        <li><span>3</span>爱尔兰人
+            <div class="content">
+                <img src="p2568902055.jpg" alt="" title="Irish man">
+                <p>《爱尔兰人》为马丁·斯科塞斯执导的传奇巨制，罗伯特·德尼罗、阿尔·帕西诺和乔·佩西主演。通过二战老兵弗兰克·希兰的视角，讲述了战后美国有组织犯罪的故事。弗兰克·希兰是一名骗子和杀手，曾经在 20
+                    世纪最恶名昭彰的人物身边工作。该电影跨越数十年，记录了美国历史上最大的悬案之一，即传奇工会领袖吉米·霍法失踪案，以宏大的故事之旅，展现有组织犯罪的隐秘通道：其内部运作、仇敌以及与主流政治的瓜葛。 </p>
+            </div>
+        </li>
+        <li><span>4</span>利刃出鞘
+            <div class="content">
+                <img src="p2574172427.jpg" alt="" title="Knives Out">
+                <p>
+                    富豪小说家哈兰·斯隆比在自己85岁生日第二天，被发现在自家庄园离奇自杀，遗留了亿万遗产。久负盛名的大侦探布兰科（丹尼尔·克雷格饰）突然被匿名人士雇佣调查此案真相。同时，哈兰的孙子兰森（克里斯·埃文斯饰）也正在秘密调查此案。当布兰科和哈兰·斯隆比家族的其他人对谈时，
+                    他发现事情并没有想象中那么简单。
+                    　　哈兰家族没有表面上那么和睦，每个人都有着不可告人的秘密，每个人都想得到遗产……究竟这起命案是自杀还是他杀？似乎每个人都有嫌疑。随着一位遗产继承人的意外亮相，真相谜底渐渐浮出水面……</p>
+            </div>
+        </li>
+        <li><span>5</span>星际探索
+            <div class="content">
+                <img src="p2576088318.jpg" alt="" title="Ad Astra">
+                <p>地球上接连出现神秘怪象，科学家发现某种失控的反物质反应正在威胁整个太阳系，人类生存极度堪忧……地球生死攸关之际，天才航天工程师罗伊（布拉德·皮特
+                    饰）被派往外太空，试图揭开谜团拯救人类。这是一场横跨地球、月球、火星、海王星，穿越整个太阳系的硬核冒险，一路危机重重险象环生，罗伊直面爆炸、陨石、月球飙车枪战、神秘生物等意想不到的考验，还找回了失联20年的父亲！当年罗伊的父亲（汤米·李·琼斯
+                    饰）离开地球探寻外星智慧生物，结果任务失败，消失在茫茫宇宙之中。如今父子重逢，罗伊在太空深处发现了不为人知的秘密，渐渐触达所有事件的终极真相…… </p>
+            </div>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

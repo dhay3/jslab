@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    function f() {
+        var location = window.location;
+        //重定向
+        location.href = "http://baidu.com";
+        //当前页面的url
+        console.log(location);
+        //当前的域名(本机localhost)
+        console.log(location.hostname);
+        //当前页面的端口
+        console.log(location.port);
+        //当前页面的路径(不包括域名和端口)
+        console.log(location.pathname);
+        //当前页面的协议http或https
+        console.log(location.protocol);
+    }
+</script>
+<body>
+<button onclick="f()">点击</button>
+</body>
+</html>

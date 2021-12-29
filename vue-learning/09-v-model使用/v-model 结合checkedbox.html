@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <!--    v-model是将标签的value值绑定到指定的属性-->
+    <!--    指定的属性可以将对应标签value的值传给标签-->
+    <!--    value对上了就会checked-->
+    <label>
+        <input type="checkbox" name="contract" v-model="agree">协议
+    </label>
+    <!--    agree为false时disabled-->
+    <button :disabled="!agree">下一步</button>
+    <!--    多选框-->
+    <label>
+        <input type="checkbox" name="hobbies" value="football" v-model="hobbies">
+        足球
+    </label>
+    <label>
+        <input type="checkbox" name="hobbies" value="basketball" v-model="hobbies">
+        篮球
+    </label>
+    <label>
+        <input type="checkbox" name="hobbies" value="baseball" v-model="hobbies">
+        棒球
+    </label>
+    <h2>{{agree}}</h2>
+    <h2>{{hobbies}}</h2>
+</div>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      agree: false,
+      hobbies: ['basketball']
+    }
+  });
+</script>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <select name="" id="" v-model="fruit">
+        <option value="apple">苹果</option>
+        <option value="banana">香蕉</option>
+        <option value="kiwi">猕猴桃</option>
+        <option value="peach">梨</option>
+    </select>
+    <!--    multiple属性能让下拉框多选-->
+    <select name="" v-model="fruits" multiple>
+        <option value="apple">苹果</option>
+        <option value="banana">香蕉</option>
+        <option value="kiwi">猕猴桃</option>
+        <option value="peach">梨</option>
+    </select>
+    <h2>{{fruit}}</h2>
+    <h2>{{fruits}}</h2>
+</div>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      fruit: 'banana',
+      fruits: []
+    }
+  });
+</script>
+</html>

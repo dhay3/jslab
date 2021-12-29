@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<link rel="stylesheet" href="https://blog-static.cnblogs.com/files/elkyo/OwO.min.css" />
+<script src="https://blog-static.cnblogs.com/files/elkyo/OwO.min.js"></script>
+<script>
+  /*文章评论*/
+  var le = $(".feedbackItem").length
+  for(var i = 0;i < le;i++){
+    var src = $(".feedbackItem").eq(i).find(".feedbackCon").find("span").text()
+    $(".feedbackCon").eq(i).prepend('<img class="comment-avatar" src="'+$.trim(src)+'">')
+  }
+  $("#commentbox_opt").nextAll().remove()
+  $("#btn_comment_submit").val("提交评论 (Ctrl + Enter)")
+</script>
+</body>
+</html>

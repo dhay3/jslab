@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    // 1、拷贝对象
+    let person1 = {name: "Amy", age: 15};
+    //将person1赋值给someone
+    let someone = { ...person1 };
+    console.log(someone);  //{name: "Amy", age: 15}
+
+    // 2、合并对象
+    let age = {age: 15};
+    let name = {name: "Amy"};
+    //将两个对象合并成一个对象person2
+    let person2 = {...age, ...name};
+    console.log(person2);  //{age: 15, name: "Amy"}
+</script>
+</html>

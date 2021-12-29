@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <cpm></cpm>
+</div>
+<!--并不在vue实例内-->
+<!--通过id来绑定-->
+<!--    方法一: 可以将text/template模板分离出来,-->
+<!--<script type="text/x-template" id="chz">-->
+<!--    <div>-->
+<!--        <h2>这是一个标题</h2>-->
+<!--        <p>这是content</p>-->
+<!--        <p>这是content</p>-->
+<!--        <p>这是content</p>-->
+<!--        <p>这是content</p>-->
+<!--    </div>-->
+<!--</script>-->
+
+<!--方法二: template标签-->
+<template id="chz">
+    <div>
+        <p>this is a shit</p>
+    </div>
+</template>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+  Vue.component("cpm", {
+    template: '#chz'
+  });
+  new Vue({
+    el: '#app',
+    data: {}
+  });
+</script>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //在最外层三者都是全局变量,但是var会变量提升,let不会变量提升
+
+        var a = 1;
+        b = 2;
+        let aa=11;
+        // console.log("a=" + a + "    b=" + b);
+        // console.log("aa=" + aa);
+
+        function f() {
+            c = 3;//这里的c被提升为全局变量
+            var d = 4;//在括号内带var的是局部变量
+            let e=5;//在括号内带let是局部变量
+            console.log("a=" + a + "    b=" + b);
+            console.log("aa=" + aa);
+        }
+
+        f();
+        // console.log("c="+c+"    d="+d);
+        console.log("e=" + e);
+        console.log("c=" + c);
+        console.log("d=" + d);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        /*一个大于号只表示上一层的父级元素*/
+        #uu > li {
+            list-style: none;
+            padding: 20px;
+            color: deeppink;
+        }
+
+        #uu > li > div {
+            height: 100px;
+            width: 100px;
+            display: block;
+            background-color: deepskyblue;
+        }
+
+        #uu > li > .c1 {
+            height: 100px;
+            width: 100px;
+            display: block;
+            background-color: black;
+        }
+    </style>
+    <script src="../../jquery_scr/jquery-1.12.4.js"></script>
+    <script>
+        $(function () {
+            console.log($("#uu>li>div"));
+            $("#uu>li>div").mouseenter(function () {
+                $(this).addClass("c1");
+            })
+        });
+    </script>
+</head>
+<body>
+<div id="con">
+    <ul id="uu">
+        <li>这是一个li
+            <div></div>
+        </li>
+        <li>这是一个li
+            <div></div>
+        </li>
+        <li>这是一个li
+            <div></div>
+        </li>
+        <li>这是一个li
+            <div></div>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

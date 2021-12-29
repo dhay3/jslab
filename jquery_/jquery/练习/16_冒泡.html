@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #d1 {
+            width: 300px;
+            height: 300px;
+            background: red;
+            /*border: 1px solid transparent;*/
+        }
+
+        #d2 {
+            width: 100px;
+            height: 100px;
+            background: #fff;
+            margin-top: 20px;
+            margin-left: 100px;
+        }
+        /*.d3{*/
+        /*    width: 40px;*/
+        /*    height: 40px;*/
+        /*    background: #f123;*/
+        /*    margin-top: 20px;*/
+        /*}*/
+
+    </style>
+    <script src="../../jquery_scr/jquery-1.12.4.js"></script>
+    <script>
+        //执行顺序2down,2up,1click
+        $(function () {
+            $("#d1").mouseup(function (e) {
+                // e.stopPropagation();
+                // e.preventDefault();
+                console.log("up");
+            });
+           $("#d1").mousedown(function (e) {
+               // e.stopPropagation();
+                console.log("down");
+           });
+            $("#d1").click(function (e) {
+                // e.stopPropagation();
+                console.log("click_d1");
+                // return false;
+
+            });
+            $("#d2").click(function (e) {
+                e.stopPropagation();
+                console.log("click");
+                return false;
+
+            });
+            $("#d2").click(function (e) {
+                // e.stopPropagation();
+                console.log("click_d2");
+                // return false;
+
+            });
+        });
+    </script>
+</head>
+<body>
+<div id="d1">
+    <div id="d2"><div class="d3">222</div>
+    </div>
+</div>
+</body>
+</html>
